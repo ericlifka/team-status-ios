@@ -453,6 +453,7 @@
 				BCC2E617175CE85C00861329 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCC2E618175CE85C00861329 /* Build configuration list for PBXNativeTarget "RallyTeamStatusTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +462,7 @@
 				BCC2E61A175CE85C00861329 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
