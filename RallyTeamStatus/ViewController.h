@@ -10,4 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UIButton *button;
+
+- (IBAction)ButtonTouched:(id)sender;
+
 @end

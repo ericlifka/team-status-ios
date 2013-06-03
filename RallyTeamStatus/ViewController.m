@@ -26,4 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)ButtonTouched:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    
+    self.textField.text = [[NSString alloc] initWithFormat:@"Touched button: %@", button];
+}
 @end
