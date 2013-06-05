@@ -1,1137 +1,538 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>08371940B0AE449EB3BB8759</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods.a</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>0D1E25F4D29C438E905B5114</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>1</string>
-		</dict>
-		<key>3D7F42164D6B45B0BFB53AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>08371940B0AE449EB3BB8759</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>55206415006C4CDBBBEBA474</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>BC4D2213175CFC8D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BC4D2225175CFC8D00D55AA6</string>
-				<string>BC4D2249175CFC8D00D55AA6</string>
-				<string>BC4D221E175CFC8D00D55AA6</string>
-				<string>BC4D221D175CFC8D00D55AA6</string>
-				<string>55206415006C4CDBBBEBA474</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2214175CFC8D00D55AA6</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0460</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Rally Software</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>BC4D2217175CFC8D00D55AA6</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>BC4D2213175CFC8D00D55AA6</string>
-			<key>productRefGroup</key>
-			<string>BC4D221D175CFC8D00D55AA6</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>BC4D221B175CFC8D00D55AA6</string>
-				<string>BC4D2241175CFC8D00D55AA6</string>
-			</array>
-		</dict>
-		<key>BC4D2217175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>BC4D2252175CFC8D00D55AA6</string>
-				<string>BC4D2253175CFC8D00D55AA6</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>BC4D2218175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BC4D222C175CFC8D00D55AA6</string>
-				<string>BC4D2230175CFC8D00D55AA6</string>
-				<string>BC4D225D175CFD2500D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BC4D2219175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BC4D2220175CFC8D00D55AA6</string>
-				<string>BC4D2222175CFC8D00D55AA6</string>
-				<string>BC4D2224175CFC8D00D55AA6</string>
-				<string>3D7F42164D6B45B0BFB53AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BC4D221A175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BC4D222A175CFC8D00D55AA6</string>
-				<string>BC4D2232175CFC8D00D55AA6</string>
-				<string>BC4D2234175CFC8D00D55AA6</string>
-				<string>BC4D2236175CFC8D00D55AA6</string>
-				<string>BC4D2239175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BC4D221B175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>BC4D2254175CFC8D00D55AA6</string>
-			<key>buildPhases</key>
-			<array>
-				<string>0D1E25F4D29C438E905B5114</string>
-				<string>BC4D2218175CFC8D00D55AA6</string>
-				<string>BC4D2219175CFC8D00D55AA6</string>
-				<string>BC4D221A175CFC8D00D55AA6</string>
-				<string>CFDB215F2C3E40B8A25C7336</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RallyTeamStatus</string>
-			<key>productName</key>
-			<string>RallyTeamStatus</string>
-			<key>productReference</key>
-			<string>BC4D221C175CFC8D00D55AA6</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>BC4D221C175CFC8D00D55AA6</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RallyTeamStatus.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>BC4D221D175CFC8D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BC4D221C175CFC8D00D55AA6</string>
-				<string>BC4D2242175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D221E175CFC8D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BC4D221F175CFC8D00D55AA6</string>
-				<string>BC4D2221175CFC8D00D55AA6</string>
-				<string>BC4D2223175CFC8D00D55AA6</string>
-				<string>BC4D2243175CFC8D00D55AA6</string>
-				<string>08371940B0AE449EB3BB8759</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D221F175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>BC4D2220175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D221F175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2221175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>BC4D2222175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D2221175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2223175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>BC4D2224175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D2223175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2225175CFC8D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BCB03122175E1F7000FAEBDB</string>
-				<string>BC4D225A175CFD0D00D55AA6</string>
-				<string>BC4D222E175CFC8D00D55AA6</string>
-				<string>BC4D222F175CFC8D00D55AA6</string>
-				<string>BC4D2237175CFC8D00D55AA6</string>
-				<string>BC4D2226175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RallyTeamStatus</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2226175CFC8D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BC4D2227175CFC8D00D55AA6</string>
-				<string>BC4D2228175CFC8D00D55AA6</string>
-				<string>BC4D222B175CFC8D00D55AA6</string>
-				<string>BC4D222D175CFC8D00D55AA6</string>
-				<string>BC4D2231175CFC8D00D55AA6</string>
-				<string>BC4D2233175CFC8D00D55AA6</string>
-				<string>BC4D2235175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2227175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>RallyTeamStatus-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2228175CFC8D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BC4D2229175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2229175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D222A175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D2228175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D222B175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D222C175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D222B175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D222D175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RallyTeamStatus-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D222E175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D222F175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2230175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D222F175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2231175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2232175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D2231175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2233175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2234175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D2233175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2235175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default-568h@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2236175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D2235175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2237175CFC8D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BC4D2238175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>MainStoryboard.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2238175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/MainStoryboard.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2239175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D2237175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D223D175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BC4D2251175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BC4D223E175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BC4D2244175CFC8D00D55AA6</string>
-				<string>BC4D2245175CFC8D00D55AA6</string>
-				<string>BC4D2246175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BC4D223F175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BC4D224E175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BC4D2240175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string># Run the unit tests in this test bundle.
-"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
-</string>
-		</dict>
-		<key>BC4D2241175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>BC4D2257175CFC8D00D55AA6</string>
-			<key>buildPhases</key>
-			<array>
-				<string>BC4D223D175CFC8D00D55AA6</string>
-				<string>BC4D223E175CFC8D00D55AA6</string>
-				<string>BC4D223F175CFC8D00D55AA6</string>
-				<string>BC4D2240175CFC8D00D55AA6</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>BC4D2248175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RallyTeamStatusTests</string>
-			<key>productName</key>
-			<string>RallyTeamStatusTests</string>
-			<key>productReference</key>
-			<string>BC4D2242175CFC8D00D55AA6</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
-		</dict>
-		<key>BC4D2242175CFC8D00D55AA6</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RallyTeamStatusTests.octest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>BC4D2243175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SenTestingKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/SenTestingKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>BC4D2244175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D2243175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2245175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D221F175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2246175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D2221175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2247175CFC8D00D55AA6</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>BC4D2214175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>BC4D221B175CFC8D00D55AA6</string>
-			<key>remoteInfo</key>
-			<string>RallyTeamStatus</string>
-		</dict>
-		<key>BC4D2248175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>BC4D221B175CFC8D00D55AA6</string>
-			<key>targetProxy</key>
-			<string>BC4D2247175CFC8D00D55AA6</string>
-		</dict>
-		<key>BC4D2249175CFC8D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BC4D224F175CFC8D00D55AA6</string>
-				<string>BC4D2250175CFC8D00D55AA6</string>
-				<string>BC4D224A175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RallyTeamStatusTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D224A175CFC8D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BC4D224B175CFC8D00D55AA6</string>
-				<string>BC4D224C175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D224B175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>RallyTeamStatusTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D224C175CFC8D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BC4D224D175CFC8D00D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D224D175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D224E175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D224C175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D224F175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RallyTeamStatusTests.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2250175CFC8D00D55AA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RallyTeamStatusTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D2251175CFC8D00D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D2250175CFC8D00D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC4D2252175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>BC4D2253175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_CFLAGS</key>
-				<string>-DNS_BLOCK_ASSERTIONS=1</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>BC4D2254175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>BC4D2255175CFC8D00D55AA6</string>
-				<string>BC4D2256175CFC8D00D55AA6</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>BC4D2255175CFC8D00D55AA6</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>55206415006C4CDBBBEBA474</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>RallyTeamStatus/RallyTeamStatus-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RallyTeamStatus/RallyTeamStatus-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>BC4D2256175CFC8D00D55AA6</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>55206415006C4CDBBBEBA474</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>RallyTeamStatus/RallyTeamStatus-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RallyTeamStatus/RallyTeamStatus-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>BC4D2257175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>BC4D2258175CFC8D00D55AA6</string>
-				<string>BC4D2259175CFC8D00D55AA6</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>BC4D2258175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/RallyTeamStatus.app/RallyTeamStatus</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>"$(SDKROOT)/Developer/Library/Frameworks"</string>
-					<string>"$(DEVELOPER_LIBRARY_DIR)/Frameworks"</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>RallyTeamStatus/RallyTeamStatus-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RallyTeamStatusTests/RallyTeamStatusTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>BC4D2259175CFC8D00D55AA6</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/RallyTeamStatus.app/RallyTeamStatus</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>"$(SDKROOT)/Developer/Library/Frameworks"</string>
-					<string>"$(DEVELOPER_LIBRARY_DIR)/Frameworks"</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>RallyTeamStatus/RallyTeamStatus-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RallyTeamStatusTests/RallyTeamStatusTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>BC4D225A175CFD0D00D55AA6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BC4D225B175CFD2500D55AA6</string>
-				<string>BC4D225C175CFD2500D55AA6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>View Controllers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D225B175CFD2500D55AA6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ArtifactTableViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D225C175CFD2500D55AA6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ArtifactTableViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC4D225D175CFD2500D55AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC4D225C175CFD2500D55AA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BCB03122175E1F7000FAEBDB</key>
-		<dict>
-			<key>children</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Data Sources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFDB215F2C3E40B8A25C7336</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>1</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>BC4D2214175CFC8D00D55AA6</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D7F42164D6B45B0BFB53AA6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08371940B0AE449EB3BB8759 /* libPods.a */; };
+		BC4D2220175CFC8D00D55AA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4D221F175CFC8D00D55AA6 /* UIKit.framework */; };
+		BC4D2222175CFC8D00D55AA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4D2221175CFC8D00D55AA6 /* Foundation.framework */; };
+		BC4D2224175CFC8D00D55AA6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4D2223175CFC8D00D55AA6 /* CoreGraphics.framework */; };
+		BC4D222A175CFC8D00D55AA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC4D2228175CFC8D00D55AA6 /* InfoPlist.strings */; };
+		BC4D222C175CFC8D00D55AA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4D222B175CFC8D00D55AA6 /* main.m */; };
+		BC4D2230175CFC8D00D55AA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4D222F175CFC8D00D55AA6 /* AppDelegate.m */; };
+		BC4D2232175CFC8D00D55AA6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BC4D2231175CFC8D00D55AA6 /* Default.png */; };
+		BC4D2234175CFC8D00D55AA6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC4D2233175CFC8D00D55AA6 /* Default@2x.png */; };
+		BC4D2236175CFC8D00D55AA6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC4D2235175CFC8D00D55AA6 /* Default-568h@2x.png */; };
+		BC4D2239175CFC8D00D55AA6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4D2237175CFC8D00D55AA6 /* MainStoryboard.storyboard */; };
+		BC4D2244175CFC8D00D55AA6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4D2243175CFC8D00D55AA6 /* SenTestingKit.framework */; };
+		BC4D2245175CFC8D00D55AA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4D221F175CFC8D00D55AA6 /* UIKit.framework */; };
+		BC4D2246175CFC8D00D55AA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4D2221175CFC8D00D55AA6 /* Foundation.framework */; };
+		BC4D224E175CFC8D00D55AA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC4D224C175CFC8D00D55AA6 /* InfoPlist.strings */; };
+		BC4D2251175CFC8D00D55AA6 /* RallyTeamStatusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4D2250175CFC8D00D55AA6 /* RallyTeamStatusTests.m */; };
+		BC4D225D175CFD2500D55AA6 /* ArtifactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4D225C175CFD2500D55AA6 /* ArtifactTableViewController.m */; };
+		BCB03126175F939A00FAEBDB /* LookbackApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB03125175F939A00FAEBDB /* LookbackApiClient.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC4D2247175CFC8D00D55AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC4D2214175CFC8D00D55AA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC4D221B175CFC8D00D55AA6;
+			remoteInfo = RallyTeamStatus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08371940B0AE449EB3BB8759 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		55206415006C4CDBBBEBA474 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		BC4D221C175CFC8D00D55AA6 /* RallyTeamStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RallyTeamStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4D221F175CFC8D00D55AA6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BC4D2221175CFC8D00D55AA6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC4D2223175CFC8D00D55AA6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BC4D2227175CFC8D00D55AA6 /* RallyTeamStatus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RallyTeamStatus-Info.plist"; sourceTree = "<group>"; };
+		BC4D2229175CFC8D00D55AA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BC4D222B175CFC8D00D55AA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC4D222D175CFC8D00D55AA6 /* RallyTeamStatus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RallyTeamStatus-Prefix.pch"; sourceTree = "<group>"; };
+		BC4D222E175CFC8D00D55AA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BC4D222F175CFC8D00D55AA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BC4D2231175CFC8D00D55AA6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BC4D2233175CFC8D00D55AA6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BC4D2235175CFC8D00D55AA6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BC4D2238175CFC8D00D55AA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		BC4D2242175CFC8D00D55AA6 /* RallyTeamStatusTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RallyTeamStatusTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4D2243175CFC8D00D55AA6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		BC4D224B175CFC8D00D55AA6 /* RallyTeamStatusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RallyTeamStatusTests-Info.plist"; sourceTree = "<group>"; };
+		BC4D224D175CFC8D00D55AA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BC4D224F175CFC8D00D55AA6 /* RallyTeamStatusTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RallyTeamStatusTests.h; sourceTree = "<group>"; };
+		BC4D2250175CFC8D00D55AA6 /* RallyTeamStatusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RallyTeamStatusTests.m; sourceTree = "<group>"; };
+		BC4D225B175CFD2500D55AA6 /* ArtifactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtifactTableViewController.h; sourceTree = "<group>"; };
+		BC4D225C175CFD2500D55AA6 /* ArtifactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtifactTableViewController.m; sourceTree = "<group>"; };
+		BCB03124175F939A00FAEBDB /* LookbackApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookbackApiClient.h; path = Rally/LookbackApiClient.h; sourceTree = "<group>"; };
+		BCB03125175F939A00FAEBDB /* LookbackApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookbackApiClient.m; path = Rally/LookbackApiClient.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC4D2219175CFC8D00D55AA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4D2220175CFC8D00D55AA6 /* UIKit.framework in Frameworks */,
+				BC4D2222175CFC8D00D55AA6 /* Foundation.framework in Frameworks */,
+				BC4D2224175CFC8D00D55AA6 /* CoreGraphics.framework in Frameworks */,
+				3D7F42164D6B45B0BFB53AA6 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC4D223E175CFC8D00D55AA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4D2244175CFC8D00D55AA6 /* SenTestingKit.framework in Frameworks */,
+				BC4D2245175CFC8D00D55AA6 /* UIKit.framework in Frameworks */,
+				BC4D2246175CFC8D00D55AA6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC4D2213175CFC8D00D55AA6 = {
+			isa = PBXGroup;
+			children = (
+				BC4D2225175CFC8D00D55AA6 /* RallyTeamStatus */,
+				BC4D2249175CFC8D00D55AA6 /* RallyTeamStatusTests */,
+				BC4D221E175CFC8D00D55AA6 /* Frameworks */,
+				BC4D221D175CFC8D00D55AA6 /* Products */,
+				55206415006C4CDBBBEBA474 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		BC4D221D175CFC8D00D55AA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D221C175CFC8D00D55AA6 /* RallyTeamStatus.app */,
+				BC4D2242175CFC8D00D55AA6 /* RallyTeamStatusTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC4D221E175CFC8D00D55AA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D221F175CFC8D00D55AA6 /* UIKit.framework */,
+				BC4D2221175CFC8D00D55AA6 /* Foundation.framework */,
+				BC4D2223175CFC8D00D55AA6 /* CoreGraphics.framework */,
+				BC4D2243175CFC8D00D55AA6 /* SenTestingKit.framework */,
+				08371940B0AE449EB3BB8759 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC4D2225175CFC8D00D55AA6 /* RallyTeamStatus */ = {
+			isa = PBXGroup;
+			children = (
+				BCB03123175F937700FAEBDB /* Rally */,
+				BCB03122175E1F7000FAEBDB /* Data Sources */,
+				BC4D225A175CFD0D00D55AA6 /* View Controllers */,
+				BC4D222E175CFC8D00D55AA6 /* AppDelegate.h */,
+				BC4D222F175CFC8D00D55AA6 /* AppDelegate.m */,
+				BC4D2237175CFC8D00D55AA6 /* MainStoryboard.storyboard */,
+				BC4D2226175CFC8D00D55AA6 /* Supporting Files */,
+			);
+			path = RallyTeamStatus;
+			sourceTree = "<group>";
+		};
+		BC4D2226175CFC8D00D55AA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D2227175CFC8D00D55AA6 /* RallyTeamStatus-Info.plist */,
+				BC4D2228175CFC8D00D55AA6 /* InfoPlist.strings */,
+				BC4D222B175CFC8D00D55AA6 /* main.m */,
+				BC4D222D175CFC8D00D55AA6 /* RallyTeamStatus-Prefix.pch */,
+				BC4D2231175CFC8D00D55AA6 /* Default.png */,
+				BC4D2233175CFC8D00D55AA6 /* Default@2x.png */,
+				BC4D2235175CFC8D00D55AA6 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC4D2249175CFC8D00D55AA6 /* RallyTeamStatusTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D224F175CFC8D00D55AA6 /* RallyTeamStatusTests.h */,
+				BC4D2250175CFC8D00D55AA6 /* RallyTeamStatusTests.m */,
+				BC4D224A175CFC8D00D55AA6 /* Supporting Files */,
+			);
+			path = RallyTeamStatusTests;
+			sourceTree = "<group>";
+		};
+		BC4D224A175CFC8D00D55AA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D224B175CFC8D00D55AA6 /* RallyTeamStatusTests-Info.plist */,
+				BC4D224C175CFC8D00D55AA6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC4D225A175CFD0D00D55AA6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D225B175CFD2500D55AA6 /* ArtifactTableViewController.h */,
+				BC4D225C175CFD2500D55AA6 /* ArtifactTableViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BCB03122175E1F7000FAEBDB /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Sources";
+			sourceTree = "<group>";
+		};
+		BCB03123175F937700FAEBDB /* Rally */ = {
+			isa = PBXGroup;
+			children = (
+				BCB03124175F939A00FAEBDB /* LookbackApiClient.h */,
+				BCB03125175F939A00FAEBDB /* LookbackApiClient.m */,
+			);
+			name = Rally;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC4D221B175CFC8D00D55AA6 /* RallyTeamStatus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC4D2254175CFC8D00D55AA6 /* Build configuration list for PBXNativeTarget "RallyTeamStatus" */;
+			buildPhases = (
+				0D1E25F4D29C438E905B5114 /* Check Pods Manifest.lock */,
+				BC4D2218175CFC8D00D55AA6 /* Sources */,
+				BC4D2219175CFC8D00D55AA6 /* Frameworks */,
+				BC4D221A175CFC8D00D55AA6 /* Resources */,
+				CFDB215F2C3E40B8A25C7336 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RallyTeamStatus;
+			productName = RallyTeamStatus;
+			productReference = BC4D221C175CFC8D00D55AA6 /* RallyTeamStatus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC4D2241175CFC8D00D55AA6 /* RallyTeamStatusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC4D2257175CFC8D00D55AA6 /* Build configuration list for PBXNativeTarget "RallyTeamStatusTests" */;
+			buildPhases = (
+				BC4D223D175CFC8D00D55AA6 /* Sources */,
+				BC4D223E175CFC8D00D55AA6 /* Frameworks */,
+				BC4D223F175CFC8D00D55AA6 /* Resources */,
+				BC4D2240175CFC8D00D55AA6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC4D2248175CFC8D00D55AA6 /* PBXTargetDependency */,
+			);
+			name = RallyTeamStatusTests;
+			productName = RallyTeamStatusTests;
+			productReference = BC4D2242175CFC8D00D55AA6 /* RallyTeamStatusTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC4D2214175CFC8D00D55AA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Rally Software";
+			};
+			buildConfigurationList = BC4D2217175CFC8D00D55AA6 /* Build configuration list for PBXProject "RallyTeamStatus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BC4D2213175CFC8D00D55AA6;
+			productRefGroup = BC4D221D175CFC8D00D55AA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC4D221B175CFC8D00D55AA6 /* RallyTeamStatus */,
+				BC4D2241175CFC8D00D55AA6 /* RallyTeamStatusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC4D221A175CFC8D00D55AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4D222A175CFC8D00D55AA6 /* InfoPlist.strings in Resources */,
+				BC4D2232175CFC8D00D55AA6 /* Default.png in Resources */,
+				BC4D2234175CFC8D00D55AA6 /* Default@2x.png in Resources */,
+				BC4D2236175CFC8D00D55AA6 /* Default-568h@2x.png in Resources */,
+				BC4D2239175CFC8D00D55AA6 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC4D223F175CFC8D00D55AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4D224E175CFC8D00D55AA6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D1E25F4D29C438E905B5114 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		BC4D2240175CFC8D00D55AA6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		CFDB215F2C3E40B8A25C7336 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC4D2218175CFC8D00D55AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4D222C175CFC8D00D55AA6 /* main.m in Sources */,
+				BC4D2230175CFC8D00D55AA6 /* AppDelegate.m in Sources */,
+				BC4D225D175CFD2500D55AA6 /* ArtifactTableViewController.m in Sources */,
+				BCB03126175F939A00FAEBDB /* LookbackApiClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC4D223D175CFC8D00D55AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4D2251175CFC8D00D55AA6 /* RallyTeamStatusTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC4D2248175CFC8D00D55AA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC4D221B175CFC8D00D55AA6 /* RallyTeamStatus */;
+			targetProxy = BC4D2247175CFC8D00D55AA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC4D2228175CFC8D00D55AA6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC4D2229175CFC8D00D55AA6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BC4D2237175CFC8D00D55AA6 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC4D2238175CFC8D00D55AA6 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		BC4D224C175CFC8D00D55AA6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC4D224D175CFC8D00D55AA6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC4D2252175CFC8D00D55AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BC4D2253175CFC8D00D55AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC4D2255175CFC8D00D55AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55206415006C4CDBBBEBA474 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RallyTeamStatus/RallyTeamStatus-Prefix.pch";
+				INFOPLIST_FILE = "RallyTeamStatus/RallyTeamStatus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BC4D2256175CFC8D00D55AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55206415006C4CDBBBEBA474 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RallyTeamStatus/RallyTeamStatus-Prefix.pch";
+				INFOPLIST_FILE = "RallyTeamStatus/RallyTeamStatus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BC4D2258175CFC8D00D55AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RallyTeamStatus.app/RallyTeamStatus";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RallyTeamStatus/RallyTeamStatus-Prefix.pch";
+				INFOPLIST_FILE = "RallyTeamStatusTests/RallyTeamStatusTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		BC4D2259175CFC8D00D55AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RallyTeamStatus.app/RallyTeamStatus";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RallyTeamStatus/RallyTeamStatus-Prefix.pch";
+				INFOPLIST_FILE = "RallyTeamStatusTests/RallyTeamStatusTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC4D2217175CFC8D00D55AA6 /* Build configuration list for PBXProject "RallyTeamStatus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC4D2252175CFC8D00D55AA6 /* Debug */,
+				BC4D2253175CFC8D00D55AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC4D2254175CFC8D00D55AA6 /* Build configuration list for PBXNativeTarget "RallyTeamStatus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC4D2255175CFC8D00D55AA6 /* Debug */,
+				BC4D2256175CFC8D00D55AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC4D2257175CFC8D00D55AA6 /* Build configuration list for PBXNativeTarget "RallyTeamStatusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC4D2258175CFC8D00D55AA6 /* Debug */,
+				BC4D2259175CFC8D00D55AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC4D2214175CFC8D00D55AA6 /* Project object */;
+}
