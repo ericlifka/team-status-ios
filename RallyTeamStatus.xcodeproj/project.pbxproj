@@ -25,6 +25,8 @@
 		BC4D2251175CFC8D00D55AA6 /* RallyTeamStatusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4D2250175CFC8D00D55AA6 /* RallyTeamStatusTests.m */; };
 		BC4D225D175CFD2500D55AA6 /* ArtifactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4D225C175CFD2500D55AA6 /* ArtifactTableViewController.m */; };
 		BCB03126175F939A00FAEBDB /* LookbackApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB03125175F939A00FAEBDB /* LookbackApiClient.m */; };
+		CC698ED9175FD19000C79DDB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC698ED8175FD19000C79DDB /* LoginViewController.m */; };
+		CC698EDC175FE72000C79DDB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC698EDB175FE72000C79DDB /* NavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,10 @@
 		BC4D225C175CFD2500D55AA6 /* ArtifactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtifactTableViewController.m; sourceTree = "<group>"; };
 		BCB03124175F939A00FAEBDB /* LookbackApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookbackApiClient.h; path = Rally/LookbackApiClient.h; sourceTree = "<group>"; };
 		BCB03125175F939A00FAEBDB /* LookbackApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookbackApiClient.m; path = Rally/LookbackApiClient.m; sourceTree = "<group>"; };
+		CC698ED7175FD19000C79DDB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "View Controllers/LoginViewController.h"; sourceTree = "<group>"; };
+		CC698ED8175FD19000C79DDB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "View Controllers/LoginViewController.m"; sourceTree = "<group>"; };
+		CC698EDA175FE72000C79DDB /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationController.h; path = "View Controllers/NavigationController.h"; sourceTree = "<group>"; };
+		CC698EDB175FE72000C79DDB /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationController.m; path = "View Controllers/NavigationController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,10 @@
 			children = (
 				BC4D225B175CFD2500D55AA6 /* ArtifactTableViewController.h */,
 				BC4D225C175CFD2500D55AA6 /* ArtifactTableViewController.m */,
+				CC698ED7175FD19000C79DDB /* LoginViewController.h */,
+				CC698ED8175FD19000C79DDB /* LoginViewController.m */,
+				CC698EDA175FE72000C79DDB /* NavigationController.h */,
+				CC698EDB175FE72000C79DDB /* NavigationController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -339,6 +349,8 @@
 				BC4D2230175CFC8D00D55AA6 /* AppDelegate.m in Sources */,
 				BC4D225D175CFD2500D55AA6 /* ArtifactTableViewController.m in Sources */,
 				BCB03126175F939A00FAEBDB /* LookbackApiClient.m in Sources */,
+				CC698ED9175FD19000C79DDB /* LoginViewController.m in Sources */,
+				CC698EDC175FE72000C79DDB /* NavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
