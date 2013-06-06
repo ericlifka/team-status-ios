@@ -32,8 +32,12 @@
     
     if (self) {
         self.artifactsInProgress = [[NSMutableArray alloc] init];
-        self.client = [LookbackApiClient instance];
-        [self.client setUsername:@"skendall@rallydev.com" andPassword:@"Password"];
+        
+        self.lookbackClient = [LookbackApiClient instance];
+        [self.lookbackClient setUsername:@"skendall@rallydev.com" andPassword:@"Password"];
+        
+        self.wsapiClient = [WSAPIClient instance];
+        [self.wsapiClient setUsername:@"skendall@rallydev.com" andPassword:@"Password"];
     }
     
     return self;
@@ -53,6 +57,14 @@
             return artifact;
         }
     }
+    
+    return nil;
+}
+
+- (void) loadArtifactsByProject:(NSString *)project withScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success {
+    [self.wsapiClient getStoriesForProject:@"279050021" withScheduleState:@"In-Progress" success:^(id responseObject) {
+        NSLog(@"%@", responseObject);
+    }];
 }
 
 - (void) loadArtifactsByScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success {
@@ -66,7 +78,7 @@
     NSArray *fields = @[@"Name", @"ScheduleState", @"PlanEstimate", @"ObjectID", @"_ValidFrom", @"_ValidTo", @"Project", @"Owner"];
     NSArray *hydrate = @[@"ScheduleState"];
     
-    [self.client findQuery:find forFields:fields withPageSize:@100 andHydrate:hydrate success:^(id responseObject) {
+    [self.lookbackClient findQuery:find forFields:fields withPageSize:@100 andHydrate:hydrate success:^(id responseObject) {
         NSDictionary *json = (NSDictionary *)responseObject;
         NSArray *results = [json objectForKey:@"Results"];
         

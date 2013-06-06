@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 
 #import "LookbackApiClient.h"
+#import "WSAPIClient.h"
 
 @class RallyArtifact;
 
 @interface RallyArtifactStore : NSObject
 
-@property (nonatomic, strong, readwrite) LookbackApiClient *client;
+@property (nonatomic, strong, readwrite) LookbackApiClient *lookbackClient;
+@property (nonatomic, strong, readwrite) WSAPIClient *wsapiClient;
+
 @property (nonatomic, strong, readwrite) NSMutableArray *artifactsInProgress;
 
 + (RallyArtifactStore *) instance;

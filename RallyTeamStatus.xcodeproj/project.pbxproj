@@ -25,6 +25,7 @@
 		BCB031B21760D1AA00FAEBDB /* LookbackApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB031B11760D1AA00FAEBDB /* LookbackApiClient.m */; };
 		BCB031B91761079D00FAEBDB /* ArtifactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB031B81761079D00FAEBDB /* ArtifactTableViewCell.m */; };
 		BCB031BB176107D700FAEBDB /* ArtifactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB031BA176107D700FAEBDB /* ArtifactTableViewCell.xib */; };
+		BCB031BE17611F9100FAEBDB /* WSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB031BD17611F9100FAEBDB /* WSAPIClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		BCB031B71761079D00FAEBDB /* ArtifactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArtifactTableViewCell.h; path = Views/ArtifactTableViewCell.h; sourceTree = "<group>"; };
 		BCB031B81761079D00FAEBDB /* ArtifactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArtifactTableViewCell.m; path = Views/ArtifactTableViewCell.m; sourceTree = "<group>"; };
 		BCB031BA176107D700FAEBDB /* ArtifactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ArtifactTableViewCell.xib; path = Views/ArtifactTableViewCell.xib; sourceTree = "<group>"; };
+		BCB031BC17611F9100FAEBDB /* WSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSAPIClient.h; path = Rally/WSAPIClient.h; sourceTree = "<group>"; };
+		BCB031BD17611F9100FAEBDB /* WSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSAPIClient.m; path = Rally/WSAPIClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 				BCB031AF1760D18F00FAEBDB /* Artifact */,
 				BCB031B01760D1AA00FAEBDB /* LookbackApiClient.h */,
 				BCB031B11760D1AA00FAEBDB /* LookbackApiClient.m */,
+				BCB031BC17611F9100FAEBDB /* WSAPIClient.h */,
+				BCB031BD17611F9100FAEBDB /* WSAPIClient.m */,
 			);
 			name = Rally;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				BCB031AE1760D07F00FAEBDB /* RallyArtifactStore.m in Sources */,
 				BCB031B21760D1AA00FAEBDB /* LookbackApiClient.m in Sources */,
 				BCB031B91761079D00FAEBDB /* ArtifactTableViewCell.m in Sources */,
+				BCB031BE17611F9100FAEBDB /* WSAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
