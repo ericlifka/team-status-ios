@@ -10,12 +10,15 @@
 
 @interface RallyArtifact : NSObject
 
-@property (nonatomic, strong, readwrite) NSString *name;
-@property (nonatomic, strong, readwrite) NSString *description;
-@property (nonatomic, strong, readwrite) NSString *owner;
-@property (nonatomic, strong, readwrite) NSString *blockedReason;
-@property (nonatomic, strong, readwrite) NSString *planEstimate;
+@property (nonatomic, strong, readwrite) NSString *Name;
+@property (nonatomic, strong, readwrite) NSString *ScheduleState;
+@property (nonatomic, strong, readwrite) NSNumber *PlanEstimate;
+@property (nonatomic, strong, readwrite) NSString *ObjectID;
+@property (nonatomic, strong, readwrite) NSString *_ValidFrom;
+@property (nonatomic, strong, readwrite) NSString *_ValidTo;
+@property (nonatomic, strong, readwrite) NSNumber *Project;
+@property (nonatomic, strong, readwrite) NSNumber *Owner;
 
-- (id) initWithName:(NSString *)name;
+@property (nonatomic, strong, readwrite) NSString *blockedReason;
 
 @end

@@ -46,12 +46,13 @@ NSString * const DEFAULT_URL = @"https://rally1.rallydev.com/analytics/v2.0/serv
     return self;
 }
 
-- (void)findQuery:(NSDictionary *)find forFields:(NSArray *)fields success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success {
-    [self findQuery:find forFields:fields withPageSize:[[NSNumber alloc] initWithInt:20000] andHydrate:@[] success:success];
+- (void)findQuery:(NSDictionary *)find forFields:(NSArray *)fields success:(void (^)(id responseObject))success {
+    [self findQuery:find forFields:fields withPageSize:[[NSNumber alloc] initWithInt:20000] andHydrate:@[]
+            success:success];
 }
 
 - (void)findQuery:(NSDictionary *)find forFields:(NSArray *)fields withPageSize:(NSNumber *)pageSize andHydrate:(NSArray *)hydrate
-          success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success {
+          success:(void (^)(id responseObject))success {
     
     NSMutableDictionary *requestData = [[NSMutableDictionary alloc] initWithCapacity:4];
     
@@ -60,7 +61,9 @@ NSString * const DEFAULT_URL = @"https://rally1.rallydev.com/analytics/v2.0/serv
     [requestData setObject:pageSize forKey:@"pagesize"];
     [requestData setObject:hydrate forKey:@"hydrate"];
     
-    [self requestWithData:requestData success:success];
+    [self requestWithData:requestData success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        success(responseObject);
+    }];
     
 }
 

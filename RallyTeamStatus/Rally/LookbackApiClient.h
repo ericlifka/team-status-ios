@@ -13,9 +13,9 @@
 @interface LookbackApiClient : AFHTTPClient
 
 + (LookbackApiClient *)instance;
-- (void)findQuery:(NSDictionary *)find forFields:(NSArray *)fields success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success;
+- (void)findQuery:(NSDictionary *)find forFields:(NSArray *)fields success:(void (^)(id responseObject))success;
 - (void)findQuery:(NSDictionary *)find forFields:(NSArray *)fields withPageSize:(NSNumber *)pageSize andHydrate:(NSArray *)hydrate
-          success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success;
+          success:(void (^)(id responseObject))success;
 - (void)setUsername:(NSString *)username andPassword:(NSString *)password;
 
 @end

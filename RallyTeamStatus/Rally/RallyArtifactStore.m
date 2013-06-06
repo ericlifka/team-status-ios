@@ -6,12 +6,14 @@
 //  Copyright (c) 2013 Rally Software. All rights reserved.
 //
 
+#import <AFHTTPRequestOperation.h>
+
 #import "RallyArtifactStore.h"
 #import "RallyArtifact.h"
 
 @implementation RallyArtifactStore
 
-+ (RallyArtifactStore *) getSingleton {
++ (RallyArtifactStore *) instance {
     static RallyArtifactStore *singleton = nil;
     
     if (!singleton) {
@@ -22,29 +24,62 @@
 }
 
 + (id) allocWithZone:(NSZone *)zone {
-    return [self getSingleton];
+    return [self instance];
 }
 
 - (id) init {
     self = [super init];
     
     if (self) {
-        artifactsInProgress = [[NSMutableArray alloc] init];
-        
-        [artifactsInProgress addObject:[[RallyArtifact alloc] initWithName:@"Story A"]];
-        [artifactsInProgress addObject:[[RallyArtifact alloc] initWithName:@"Story B"]];
-        [artifactsInProgress addObject:[[RallyArtifact alloc] initWithName:@"Defect 1"]];
+        self.artifactsInProgress = [[NSMutableArray alloc] init];
+        self.client = [LookbackApiClient instance];
+        [self.client setUsername:@"skendall@rallydev.com" andPassword:@"Password"];
     }
     
     return self;
 }
 
 - (NSInteger) itemsToDisplayCount {
-    return [artifactsInProgress count];
+    return [self.artifactsInProgress count];
 }
 
 - (RallyArtifact *) getArtifactByIndex:(NSInteger)index {
-    return [artifactsInProgress objectAtIndex:index];
+    return [self.artifactsInProgress objectAtIndex:index];
+}
+
+- (RallyArtifact *) getArtifactByObjectID:(NSString *)objectId {
+    for(id artifact in self.artifactsInProgress) {
+        if([[artifact valueForKey:@"ObjectID"] isEqualToString:objectId]) {
+            return artifact;
+        }
+    }
+}
+
+- (void) loadArtifactsByScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success {
+    NSDictionary *find = @{
+        @"__At": @"current",
+        @"_TypeHierarchy": @"HierarchicalRequirement",
+        @"ScheduleState": state,
+        @"Project": @279050021
+    };
+    
+    NSArray *fields = @[@"Name", @"ScheduleState", @"PlanEstimate", @"ObjectID", @"_ValidFrom", @"_ValidTo", @"Project", @"Owner"];
+    NSArray *hydrate = @[@"ScheduleState"];
+    
+    [self.client findQuery:find forFields:fields withPageSize:@100 andHydrate:hydrate success:^(id responseObject) {
+        NSDictionary *json = (NSDictionary *)responseObject;
+        NSArray *results = [json objectForKey:@"Results"];
+        
+        for(id result in results) {
+            RallyArtifact * artifact = [[RallyArtifact alloc] init];
+            [artifact setValuesForKeysWithDictionary:result];
+            [self.artifactsInProgress addObject:artifact];
+        }
+        
+        NSLog(@"%@", self.artifactsInProgress);
+        
+        success(self);
+    }];
 }
 
 @end

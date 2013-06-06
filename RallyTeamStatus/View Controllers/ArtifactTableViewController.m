@@ -8,6 +8,7 @@
 
 #import "ArtifactTableViewController.h"
 #import "ArtifactSummaryViewController.h"
+#import "ArtifactTableViewCell.h"
 
 #import "RallyArtifactStore.h"
 #import "RallyArtifact.h"
@@ -21,13 +22,30 @@
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if(store == nil) {
+        store = [RallyArtifactStore instance];
+    }
+
+    [self.tableView setDataSource:self];
+
+    [store loadArtifactsByScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
+        UIActivityIndicatorView *loadIndicator = (UIActivityIndicatorView *)[self.view viewWithTag:100];
+        [loadIndicator removeFromSuperview];
+        
+        [self.tableView reloadData];
+    }];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self showLoadingView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,29 +57,42 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    RallyArtifactStore *artifactStore = [RallyArtifactStore getSingleton];
-    NSInteger itemsInTable = [artifactStore itemsToDisplayCount];
-    
+    NSInteger itemsInTable = [store itemsToDisplayCount];
     return itemsInTable;
 
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-    RallyArtifactStore *artifactStore = [RallyArtifactStore getSingleton];
-    RallyArtifact *artifact = [artifactStore getArtifactByIndex:indexPath.row];
+    ArtifactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtifactTableViewCell"];
     
-    [cell.textLabel setText:artifact.name];
+    if (!cell) {
+        cell = [ArtifactTableViewCell create];
+    }
+    
+    RallyArtifact *artifact = [store getArtifactByIndex:indexPath.row];
+    NSString *name = [artifact valueForKey:@"Name"];
+    NSString *owner = [[NSString alloc] initWithFormat:@"Owned by: %@", [artifact valueForKey:@"Owner"]];
+    
+    [cell.artifactName setText:name];
+    [cell.artifactOwner setText:owner];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ArtifactSummaryViewController *summaryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ArtifactSummaryViewController"];
-    [self.navigationController pushViewController:summaryViewController animated:YES];
+    [self performSegueWithIdentifier:@"ArtifactSummarySegue" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"Segue-ing");
+}
+
+- (void)showLoadingView {
+    UIActivityIndicatorView *loadIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    loadIndicator.tag = 100;
+    loadIndicator.center = self.view.center;
+    [loadIndicator startAnimating];
+    
+    [self.view addSubview:loadIndicator];
 }
 
 @end

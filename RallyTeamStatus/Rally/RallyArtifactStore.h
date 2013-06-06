@@ -8,16 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+#import "LookbackApiClient.h"
+
 @class RallyArtifact;
 
 @interface RallyArtifactStore : NSObject
-{
-    NSMutableArray *artifactsInProgress;
-}
 
-+ (RallyArtifactStore *) getSingleton;
+@property (nonatomic, strong, readwrite) LookbackApiClient *client;
+@property (nonatomic, strong, readwrite) NSMutableArray *artifactsInProgress;
+
++ (RallyArtifactStore *) instance;
 
 - (NSInteger) itemsToDisplayCount;
 - (RallyArtifact *) getArtifactByIndex:(NSInteger)index;
+- (RallyArtifact *) getArtifactByObjectID:(NSString *)objectId;
+
+- (void) loadArtifactsByScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success;
 @end
 

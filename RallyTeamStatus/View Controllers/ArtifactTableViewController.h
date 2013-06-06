@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ArtifactTableViewController : UITableViewController
+#import "RallyArtifactStore.h"
+
+@interface ArtifactTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
+    RallyArtifactStore *store;
+}
 
 @end
