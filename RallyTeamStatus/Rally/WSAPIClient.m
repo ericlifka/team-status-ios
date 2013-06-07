@@ -12,13 +12,13 @@
 
 #import "WSAPIClient.h"
 
-NSString * const DEFAULT_URL = @"https://rally1.rallydev.com/slm/webservice/v2.0";
-
 @implementation WSAPIClient
 
 + (WSAPIClient *)instance {
     static dispatch_once_t pred;
     static WSAPIClient *instance = nil;
+    
+    NSString *DEFAULT_URL = @"https://rally1.rallydev.com/slm/webservice/v2.0";
     
     dispatch_once(&pred, ^{
         instance = [[self alloc] initWithBaseURL:[NSURL URLWithString:DEFAULT_URL]];
@@ -46,10 +46,15 @@ NSString * const DEFAULT_URL = @"https://rally1.rallydev.com/slm/webservice/v2.0
     return self;
 }
 
-- (void)getStoriesForProject:(NSString *)project withScheduleState:(NSString *)state success:(void (^)(id responseObject))success {
+- (void)getStoriesForProject:(NSNumber *)project withScheduleState:(NSString *)state success:(void (^)(id responseObject))success {
     NSMutableDictionary *requestData = [[NSMutableDictionary alloc] init];
-    [requestData setObject:@"true" forKey:@"fetch"];
-    [requestData setObject:[NSString stringWithFormat:@"((Project = %@) and (ScheduleState = %@))", project, state] forKey:@"query"];
+    
+    NSArray *fetchFields = @[@"Name", @"ScheduleState", @"PlanEstimate", @"ObjectID", @"Project", @"Owner", @"FormattedID"];
+    
+    [requestData setObject:[fetchFields componentsJoinedByString:@","] forKey:@"fetch"];
+    [requestData setObject:[NSString stringWithFormat:@"/project/%@", project] forKey:@"project"];
+    [requestData setObject:[NSString stringWithFormat:@"(ScheduleState = %@)", state] forKey:@"query"];
+
     [self getPath:@"hierarchicalrequirement" parameters:requestData
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               success(responseObject);

@@ -9,7 +9,8 @@
 #import <AFHTTPRequestOperation.h>
 
 #import "RallyArtifactStore.h"
-#import "RallyArtifact.h"
+#import "RallyLookbackArtifact.h"
+#import "RallyWSAPIArtifact.h"
 
 @implementation RallyArtifactStore
 
@@ -31,7 +32,7 @@
     self = [super init];
     
     if (self) {
-        self.artifactsInProgress = [[NSMutableArray alloc] init];
+        self.artifacts = [[NSMutableArray alloc] init];
         
         self.lookbackClient = [LookbackApiClient instance];
         [self.lookbackClient setUsername:@"skendall@rallydev.com" andPassword:@"Password"];
@@ -44,15 +45,15 @@
 }
 
 - (NSInteger) itemsToDisplayCount {
-    return [self.artifactsInProgress count];
+    return [self.artifacts count];
 }
 
-- (RallyArtifact *) getArtifactByIndex:(NSInteger)index {
-    return [self.artifactsInProgress objectAtIndex:index];
+- (RallyWSAPIArtifact *) getArtifactByIndex:(NSInteger)index {
+    return [self.artifacts objectAtIndex:index];
 }
 
-- (RallyArtifact *) getArtifactByObjectID:(NSString *)objectId {
-    for(id artifact in self.artifactsInProgress) {
+- (RallyWSAPIArtifact *) getArtifactByObjectID:(NSString *)objectId {
+    for(id artifact in self.artifacts) {
         if([[artifact valueForKey:@"ObjectID"] isEqualToString:objectId]) {
             return artifact;
         }
@@ -61,9 +62,17 @@
     return nil;
 }
 
-- (void) loadArtifactsByProject:(NSString *)project withScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success {
-    [self.wsapiClient getStoriesForProject:@"279050021" withScheduleState:@"In-Progress" success:^(id responseObject) {
-        NSLog(@"%@", responseObject);
+- (void) loadArtifactsByProject:(NSNumber *)project withScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success {
+    [self.wsapiClient getStoriesForProject:project withScheduleState:state success:^(id responseObject) {        
+        NSDictionary *json = (NSDictionary *)responseObject;
+        NSDictionary *results = [[json objectForKey:@"QueryResult"] objectForKey:@"Results"];
+        
+        for(id result in results) {
+            RallyWSAPIArtifact *artifact = [RallyWSAPIArtifact initWithValues:result];
+            [self.artifacts addObject:artifact];
+        }
+
+        success(self);
     }];
 }
 
@@ -83,12 +92,12 @@
         NSArray *results = [json objectForKey:@"Results"];
         
         for(id result in results) {
-            RallyArtifact * artifact = [[RallyArtifact alloc] init];
+            RallyLookbackArtifact * artifact = [[RallyLookbackArtifact alloc] init];
             [artifact setValuesForKeysWithDictionary:result];
-            [self.artifactsInProgress addObject:artifact];
+            [self.artifacts addObject:artifact];
         }
         
-        NSLog(@"%@", self.artifactsInProgress);
+        NSLog(@"%@", self.artifacts);
         
         success(self);
     }];

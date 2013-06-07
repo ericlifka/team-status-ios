@@ -11,21 +11,24 @@
 #import "LookbackApiClient.h"
 #import "WSAPIClient.h"
 
-@class RallyArtifact;
+@class RallyLookbackArtifact;
+@class RallyWSAPIArtifact;
 
 @interface RallyArtifactStore : NSObject
 
 @property (nonatomic, strong, readwrite) LookbackApiClient *lookbackClient;
 @property (nonatomic, strong, readwrite) WSAPIClient *wsapiClient;
 
-@property (nonatomic, strong, readwrite) NSMutableArray *artifactsInProgress;
+@property (nonatomic, strong, readwrite) NSMutableArray *artifacts;
 
 + (RallyArtifactStore *) instance;
 
 - (NSInteger) itemsToDisplayCount;
-- (RallyArtifact *) getArtifactByIndex:(NSInteger)index;
-- (RallyArtifact *) getArtifactByObjectID:(NSString *)objectId;
+- (RallyWSAPIArtifact *) getArtifactByIndex:(NSInteger)index;
+- (RallyWSAPIArtifact *) getArtifactByObjectID:(NSString *)objectId;
 
 - (void) loadArtifactsByScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success;
+- (void) loadArtifactsByProject:(NSNumber *)project withScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success;
+
 @end
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RallyArtifact : NSObject
+@interface RallyLookbackArtifact : NSObject
 
 @property (nonatomic, strong, readwrite) NSString *Name;
 @property (nonatomic, strong, readwrite) NSString *ScheduleState;

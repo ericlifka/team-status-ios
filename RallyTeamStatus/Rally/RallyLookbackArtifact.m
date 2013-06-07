@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Rally Software. All rights reserved.
 //
 
-#import "RallyArtifact.h"
+#import "RallyLookbackArtifact.h"
 
-@implementation RallyArtifact
+@implementation RallyLookbackArtifact
 
 @end

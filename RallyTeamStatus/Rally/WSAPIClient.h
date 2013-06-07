@@ -14,6 +14,6 @@
 
 + (WSAPIClient *)instance;
 - (void)setUsername:(NSString *)username andPassword:(NSString *)password;
-- (void)getStoriesForProject:(NSString *)project withScheduleState:(NSString *)state success:(void (^)(id responseObject))success;
+- (void)getStoriesForProject:(NSNumber *)project withScheduleState:(NSString *)state success:(void (^)(id responseObject))success;
 
 @end

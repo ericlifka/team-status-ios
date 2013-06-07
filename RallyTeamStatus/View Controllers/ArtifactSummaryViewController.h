@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class RallyWSAPIArtifact;
+
 @interface ArtifactSummaryViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet UILabel *formattedIdLabel;
+
+@property (nonatomic, strong) RallyWSAPIArtifact *artifact;
 
 @end

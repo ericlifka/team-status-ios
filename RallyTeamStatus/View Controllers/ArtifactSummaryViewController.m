@@ -7,6 +7,7 @@
 //
 
 #import "ArtifactSummaryViewController.h"
+#import "RallyWSAPIArtifact.h"
 
 @interface ArtifactSummaryViewController ()
 
@@ -26,7 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    [self.formattedIdLabel setText:[self.artifact getValueForKey:@"FormattedID"]];
 }
 
 - (void)didReceiveMemoryWarning

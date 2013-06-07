@@ -40,9 +40,27 @@
                     <view key="view" contentMode="scaleToFill" id="VQd-vA-VGI">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FormattedID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wB-Xx-3GY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="luK-bH-ObK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0wB-Xx-3GY" firstAttribute="leading" secondItem="VQd-vA-VGI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0zP-AK-xig"/>
+                            <constraint firstAttribute="trailing" secondItem="0wB-Xx-3GY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="C35-MR-4sC"/>
+                            <constraint firstItem="0wB-Xx-3GY" firstAttribute="top" secondItem="VQd-vA-VGI" secondAttribute="top" constant="20" symbolic="YES" type="default" id="bUu-xd-vQg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="H5V-Wc-Bgi"/>
+                    <connections>
+                        <outlet property="formattedIdLabel" destination="0wB-Xx-3GY" id="rtO-VW-RfA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rq7-Cy-n5K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,9 +85,15 @@
     <classes>
         <class className="ArtifactSummaryViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtifactSummaryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="formattedIdLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="ArtifactTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtifactTableViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

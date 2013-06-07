@@ -11,7 +11,8 @@
 #import "ArtifactTableViewCell.h"
 
 #import "RallyArtifactStore.h"
-#import "RallyArtifact.h"
+#import "RallyLookbackArtifact.h"
+#import "RallyWSAPIArtifact.h"
 
 @interface ArtifactTableViewController ()
 
@@ -35,17 +36,24 @@
     }
 
     [self.tableView setDataSource:self];
+    [self showLoadingView];
 
-    [store loadArtifactsByScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
-        UIActivityIndicatorView *loadIndicator = (UIActivityIndicatorView *)[self.view viewWithTag:100];
-        [loadIndicator removeFromSuperview];
+//    [store loadArtifactsByScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
+//        UIActivityIndicatorView *loadIndicator = (UIActivityIndicatorView *)[self.view viewWithTag:100];
+//        [loadIndicator removeFromSuperview];
+//        
+//        [self.tableView reloadData];
+//    }];
+    
+    [store loadArtifactsByProject:@279050021 withScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
+        [self removeLoadingView];
         
         [self.tableView reloadData];
     }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self showLoadingView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,10 +76,10 @@
     if (!cell) {
         cell = [ArtifactTableViewCell create];
     }
-    
-    RallyArtifact *artifact = [store getArtifactByIndex:indexPath.row];
-    NSString *name = [artifact valueForKey:@"Name"];
-    NSString *owner = [[NSString alloc] initWithFormat:@"Owned by: %@", [artifact valueForKey:@"Owner"]];
+
+    RallyWSAPIArtifact *artifact = [store getArtifactByIndex:indexPath.row];
+    NSString *name = [artifact getValueForKey:@"Name"];
+    NSString *owner = [NSString stringWithFormat:@"Owned by: %@", [artifact getOwner]];
     
     [cell.artifactName setText:name];
     [cell.artifactOwner setText:owner];
@@ -79,11 +87,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"ArtifactSummarySegue" sender:self];
+    [self performSegueWithIdentifier:@"ArtifactSummarySegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"Segue-ing");
+    if([segue.identifier isEqualToString:@"ArtifactSummarySegue"]) {
+        ArtifactSummaryViewController *summaryViewController = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+
+        RallyWSAPIArtifact *artifact = [store getArtifactByIndex:indexPath.row];
+        summaryViewController.artifact = artifact;
+    }
 }
 
 - (void)showLoadingView {
@@ -93,6 +107,13 @@
     [loadIndicator startAnimating];
     
     [self.view addSubview:loadIndicator];
+}
+
+- (void)removeLoadingView {
+    UIActivityIndicatorView *loadIndicator = (UIActivityIndicatorView *)[self.view viewWithTag:100];
+    if(loadIndicator != nil) {
+        [loadIndicator removeFromSuperview];
+    }
 }
 
 @end

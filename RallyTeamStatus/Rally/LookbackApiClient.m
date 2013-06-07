@@ -12,13 +12,13 @@
 
 #import "LookbackApiClient.h"
 
-NSString * const DEFAULT_URL = @"https://rally1.rallydev.com/analytics/v2.0/service/rally/workspace/41529001/artifact/snapshot";
-
 @implementation LookbackApiClient
 
 + (LookbackApiClient *)instance {
     static dispatch_once_t pred;
     static LookbackApiClient *instance = nil;
+    
+    NSString *DEFAULT_URL = @"https://rally1.rallydev.com/analytics/v2.0/service/rally/workspace/41529001/artifact/snapshot";
     
     dispatch_once(&pred, ^{
         instance = [[self alloc] initWithBaseURL:[NSURL URLWithString:DEFAULT_URL]];
