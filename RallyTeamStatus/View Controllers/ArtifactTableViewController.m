@@ -13,6 +13,7 @@
 #import "RallyArtifactStore.h"
 #import "RallyLookbackArtifact.h"
 #import "RallyWSAPIArtifact.h"
+#import "FontAwesomeKit.h"
 
 @interface ArtifactTableViewController ()
 
@@ -50,6 +51,9 @@
         
         [self.tableView reloadData];
     }];
+
+    [self styleNavigationController];
+    [self setNavigationIcons];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -98,6 +102,18 @@
         RallyWSAPIArtifact *artifact = [store getArtifactByIndex:indexPath.row];
         summaryViewController.artifact = artifact;
     }
+}
+
+- (void)styleNavigationController {
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+}
+
+- (void)setNavigationIcons {
+    UIImage *inFlight = [FontAwesomeKit imageForIcon:FAKIconRocket imageSize:CGSizeMake(30, 30) fontSize:20 attributes:nil];
+    UIImage *recentActivity = [FontAwesomeKit imageForIcon:FAKIconBellAlt imageSize:CGSizeMake(30, 30) fontSize:20 attributes:nil];
+
+    [self.displayControl setImage:inFlight forSegmentAtIndex:0];
+    [self.displayControl setImage:recentActivity forSegmentAtIndex:1];
 }
 
 - (void)showLoadingView {

@@ -14,4 +14,6 @@
     RallyArtifactStore *store;
 }
 
+@property (strong, nonatomic) IBOutlet UISegmentedControl *displayControl;
+
 @end

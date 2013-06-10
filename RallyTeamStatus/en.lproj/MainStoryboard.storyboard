@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Artifact Table View Controller - Rally Artifacts-->
+        <!--Artifact Table View Controller-->
         <scene sceneID="XtV-y9-pOF">
             <objects>
                 <tableViewController id="v6b-Hk-sYC" customClass="ArtifactTableViewController" sceneMemberID="viewController">
@@ -24,14 +24,25 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Rally Artifacts" id="SZ2-Ok-H5y"/>
+                    <navigationItem key="navigationItem" id="SZ2-Ok-H5y">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="M9K-rV-kFf">
+                            <rect key="frame" x="101" y="5" width="117" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Flight"/>
+                                <segment title="Activity"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
+                        <outlet property="displayControl" destination="M9K-rV-kFf" id="YDR-bg-R3W"/>
                         <segue destination="hjd-9m-r6a" kind="push" identifier="ArtifactSummarySegue" id="AZ0-xd-SG2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbD-OF-R9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="-234"/>
+            <point key="canvasLocation" x="914" y="-234"/>
         </scene>
         <!--Artifact Summary View Controller-->
         <scene sceneID="do3-mb-dTu">
@@ -91,6 +102,9 @@
         </class>
         <class className="ArtifactTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtifactTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="displayControl" candidateClass="UISegmentedControl"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
