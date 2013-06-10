@@ -110,13 +110,17 @@ NSInteger RECENT_ACTIVITY = 1;
     }];
 }
 
+- (void)loadRecentActivityStream {
+
+}
+
 - (void)styleNavigationController {
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)setNavigationIcons {
     UIImage *inFlight = [FontAwesomeKit imageForIcon:FAKIconRocket imageSize:CGSizeMake(30, 30) fontSize:20 attributes:nil];
-    UIImage *recentActivity = [FontAwesomeKit imageForIcon:FAKIconBellAlt imageSize:CGSizeMake(30, 30) fontSize:20 attributes:nil];
+    UIImage *recentActivity = [FontAwesomeKit imageForIcon:FAKIconCalendar imageSize:CGSizeMake(30, 30) fontSize:20 attributes:nil];
 
     [self.displayControl setImage:inFlight forSegmentAtIndex:0];
     [self.displayControl setImage:recentActivity forSegmentAtIndex:1];
@@ -146,7 +150,7 @@ NSInteger RECENT_ACTIVITY = 1;
     }
 
     if(control.selectedSegmentIndex == RECENT_ACTIVITY) {
-        NSLog(@"Recent activity");
+        [self loadRecentActivityStream];
     }
 }
 @end
