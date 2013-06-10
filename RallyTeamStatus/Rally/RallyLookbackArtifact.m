@@ -10,4 +10,14 @@
 
 @implementation RallyLookbackArtifact
 
++ initWithValues:(NSDictionary *)values {
+    RallyLookbackArtifact *artifact = [[self alloc] init];
+    artifact.values = values;
+    return artifact;
+}
+
+- (id)getValueForKey:(NSString *)key {
+    return [self.values objectForKey:key];
+}
+
 @end

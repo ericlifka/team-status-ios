@@ -62,8 +62,35 @@
     return nil;
 }
 
+- (void)loadRecentSnapshotsForProject:(NSNumber *)project success:(void (^)(RallyArtifactStore *store))success {
+    NSDictionary *find = @{
+        @"Project": project
+    };
+    
+    NSArray *fields = @[@"Name", @"ScheduleState", @"PlanEstimate", @"ObjectID", @"_ValidFrom", @"_ValidTo", @"Project", @"Owner"];
+    NSArray *hydrate = @[@"ScheduleState"];
+    
+    [self.lookbackClient findQuery:find forFields:fields withPageSize:@10 andHydrate:hydrate success:^(id responseObject) {
+        self.artifacts = [[NSMutableArray alloc] init];
+        
+        NSDictionary *json = (NSDictionary *)responseObject;
+        NSArray *results = [json objectForKey:@"Results"];
+        
+        for(id result in results) {
+            RallyLookbackArtifact * artifact = [RallyLookbackArtifact initWithValues:result];
+            [self.artifacts addObject:artifact];
+        }
+        
+        NSLog(@"%@", self.artifacts);
+        
+        success(self);
+    }];
+}
+
 - (void) loadArtifactsByProject:(NSNumber *)project withScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success {
-    [self.wsapiClient getStoriesForProject:project withScheduleState:state success:^(id responseObject) {        
+    [self.wsapiClient getStoriesForProject:project withScheduleState:state success:^(id responseObject) {
+        self.artifacts = [[NSMutableArray alloc] init];
+        
         NSDictionary *json = (NSDictionary *)responseObject;
         NSDictionary *results = [[json objectForKey:@"QueryResult"] objectForKey:@"Results"];
         

@@ -10,15 +10,9 @@
 
 @interface RallyLookbackArtifact : NSObject
 
-@property (nonatomic, strong, readwrite) NSString *Name;
-@property (nonatomic, strong, readwrite) NSString *ScheduleState;
-@property (nonatomic, strong, readwrite) NSNumber *PlanEstimate;
-@property (nonatomic, strong, readwrite) NSString *ObjectID;
-@property (nonatomic, strong, readwrite) NSString *_ValidFrom;
-@property (nonatomic, strong, readwrite) NSString *_ValidTo;
-@property (nonatomic, strong, readwrite) NSNumber *Project;
-@property (nonatomic, strong, readwrite) NSNumber *Owner;
+@property (nonatomic, strong) NSDictionary *values;
 
-@property (nonatomic, strong, readwrite) NSString *blockedReason;
++ initWithValues:(NSDictionary *)values;
+- (id)getValueForKey:(NSString *)key;
 
 @end

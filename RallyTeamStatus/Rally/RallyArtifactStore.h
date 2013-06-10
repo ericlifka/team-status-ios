@@ -27,6 +27,7 @@
 - (RallyWSAPIArtifact *) getArtifactByIndex:(NSInteger)index;
 - (RallyWSAPIArtifact *) getArtifactByObjectID:(NSNumber *)objectId;
 
+- (void) loadRecentSnapshotsForProject:(NSNumber *)project success:(void (^)(RallyArtifactStore *store))success;
 - (void) loadArtifactsByScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success;
 - (void) loadArtifactsByProject:(NSNumber *)project withScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success;
 
