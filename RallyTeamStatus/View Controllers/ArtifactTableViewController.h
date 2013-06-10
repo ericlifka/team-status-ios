@@ -14,6 +14,8 @@
     RallyArtifactStore *store;
 }
 
+- (IBAction)onControlValueChanged:(id)sender;
+
 @property (strong, nonatomic) IBOutlet UISegmentedControl *displayControl;
 
 @end

@@ -15,5 +15,6 @@
 + initWithValues:(NSDictionary *)values;
 - (id)getValueForKey:(NSString *)key;
 - (NSString *)getOwner;
+- (NSNumber *)getObjectId;
 
 @end

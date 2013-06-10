@@ -25,7 +25,7 @@
 
 - (NSInteger) itemsToDisplayCount;
 - (RallyWSAPIArtifact *) getArtifactByIndex:(NSInteger)index;
-- (RallyWSAPIArtifact *) getArtifactByObjectID:(NSString *)objectId;
+- (RallyWSAPIArtifact *) getArtifactByObjectID:(NSNumber *)objectId;
 
 - (void) loadArtifactsByScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success;
 - (void) loadArtifactsByProject:(NSNumber *)project withScheduleState:(NSString *)state success:(void (^)(RallyArtifactStore *store))success;

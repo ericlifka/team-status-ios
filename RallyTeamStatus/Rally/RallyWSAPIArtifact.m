@@ -35,4 +35,13 @@
     return @"None";
 }
 
+- (NSNumber *)getObjectId {
+    NSNumber *objectId = [self getValueForKey:@"ObjectID"];
+    if(objectId != nil) {
+        return objectId;
+    }
+
+    return @0;
+}
+
 @end

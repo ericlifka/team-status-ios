@@ -52,9 +52,9 @@
     return [self.artifacts objectAtIndex:index];
 }
 
-- (RallyWSAPIArtifact *) getArtifactByObjectID:(NSString *)objectId {
+- (RallyWSAPIArtifact *) getArtifactByObjectID:(NSNumber *)objectId {
     for(id artifact in self.artifacts) {
-        if([[artifact valueForKey:@"ObjectID"] isEqualToString:objectId]) {
+        if([[artifact getValueForKey:@"ObjectID"] isEqualToNumber:objectId]) {
             return artifact;
         }
     }
@@ -69,7 +69,10 @@
         
         for(id result in results) {
             RallyWSAPIArtifact *artifact = [RallyWSAPIArtifact initWithValues:result];
-            [self.artifacts addObject:artifact];
+
+            if([self getArtifactByObjectID:[artifact getObjectId]] == nil) {
+                [self.artifacts addObject:artifact];
+            }
         }
 
         success(self);

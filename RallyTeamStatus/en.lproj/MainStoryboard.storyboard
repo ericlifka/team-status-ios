@@ -33,6 +33,9 @@
                                 <segment title="Flight"/>
                                 <segment title="Activity"/>
                             </segments>
+                            <connections>
+                                <action selector="onControlValueChanged:" destination="v6b-Hk-sYC" eventType="valueChanged" id="fk6-DM-gbT"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
@@ -103,6 +106,7 @@
         <class className="ArtifactTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtifactTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="onControlValueChanged:"/>
                 <relationship kind="outlet" name="displayControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>

@@ -15,6 +15,9 @@
 #import "RallyWSAPIArtifact.h"
 #import "FontAwesomeKit.h"
 
+NSInteger IN_FLIGHT = 0;
+NSInteger RECENT_ACTIVITY = 1;
+
 @interface ArtifactTableViewController ()
 
 @end
@@ -45,13 +48,8 @@
 //        
 //        [self.tableView reloadData];
 //    }];
-    
-    [store loadArtifactsByProject:@279050021 withScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
-        [self removeLoadingView];
-        
-        [self.tableView reloadData];
-    }];
 
+    [self loadArtifactsInProgress];
     [self styleNavigationController];
     [self setNavigationIcons];
 }
@@ -104,6 +102,14 @@
     }
 }
 
+- (void)loadArtifactsInProgress {
+    [store loadArtifactsByProject:@279050021 withScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
+        [self removeLoadingView];
+
+        [self.tableView reloadData];
+    }];
+}
+
 - (void)styleNavigationController {
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
@@ -132,4 +138,15 @@
     }
 }
 
+- (IBAction)onControlValueChanged:(id)sender {
+    UISegmentedControl *control = (UISegmentedControl *)sender;
+
+    if(control.selectedSegmentIndex == IN_FLIGHT) {
+        [self loadArtifactsInProgress];
+    }
+
+    if(control.selectedSegmentIndex == RECENT_ACTIVITY) {
+        NSLog(@"Recent activity");
+    }
+}
 @end
