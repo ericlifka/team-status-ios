@@ -13,6 +13,9 @@
 @property (nonatomic, strong) NSDictionary *values;
 
 + initWithValues:(NSDictionary *)values;
+
+- (NSArray *)getChangedFields;
+
 - (id)getValueForKey:(NSString *)key;
 
 @end

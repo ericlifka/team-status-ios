@@ -15,7 +15,7 @@
 + (LookbackApiClient *)instance;
 
 - (void)findQuery:(NSDictionary *)find forFields:(NSArray *)fields success:(void (^)(id responseObject))success;
-- (void)findQuery:(NSDictionary *)find forFields:(NSArray *)fields withPageSize:(NSNumber *)pageSize andHydrate:(NSArray *)hydrate
+- (void)findQuery:(NSDictionary *)find forFields:(id)fields withPageSize:(NSNumber *)pageSize andHydrate:(NSArray *)hydrate
           success:(void (^)(id responseObject))success;
 - (void)setUsername:(NSString *)username andPassword:(NSString *)password;
 

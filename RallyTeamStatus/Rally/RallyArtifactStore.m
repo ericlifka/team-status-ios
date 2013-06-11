@@ -67,10 +67,9 @@
         @"Project": project
     };
     
-    NSArray *fields = @[@"Name", @"ScheduleState", @"PlanEstimate", @"ObjectID", @"_ValidFrom", @"_ValidTo", @"Project", @"Owner"];
     NSArray *hydrate = @[@"ScheduleState"];
     
-    [self.lookbackClient findQuery:find forFields:fields withPageSize:@10 andHydrate:hydrate success:^(id responseObject) {
+    [self.lookbackClient findQuery:find forFields:@"true" withPageSize:@10 andHydrate:hydrate success:^(id responseObject) {
         self.artifacts = [[NSMutableArray alloc] init];
         
         NSDictionary *json = (NSDictionary *)responseObject;

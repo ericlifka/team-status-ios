@@ -8,7 +8,7 @@
 
 #import "ArtifactTableViewController.h"
 #import "ArtifactSummaryViewController.h"
-#import "ArtifactTableViewCell.h"
+#import "WSAPIArtifactTableViewCell.h"
 
 #import "RallyArtifactStore.h"
 #import "ArtifactTableViewDataSource.h"

@@ -8,9 +8,10 @@
 
 #import "ArtifactTableViewDataSource.h"
 #import "RallyArtifactStore.h"
-#import "ArtifactTableViewCell.h"
+#import "WSAPIArtifactTableViewCell.h"
 #import "RallyWSAPIArtifact.h"
 #import "RallyLookbackArtifact.h"
+#import "LookbackArtifactTableViewCell.h"
 
 //NSInteger IN_FLIGHT = 0;
 //NSInteger RECENT_ACTIVITY = 1;
@@ -45,10 +46,10 @@
 }
 
 - (UITableViewCell *)inProgressTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ArtifactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtifactTableViewCell"];
+    WSAPIArtifactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WSAPIArtifactTableViewCell"];
 
     if (!cell) {
-        cell = [ArtifactTableViewCell create];
+        cell = [WSAPIArtifactTableViewCell create];
     }
 
     RallyWSAPIArtifact *artifact = [wsapiStore getArtifactByIndex:indexPath.row];
@@ -61,19 +62,19 @@
 }
 
 - (UITableViewCell *)inFlightTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ArtifactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtifactTableViewCell"];
+    LookbackArtifactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LookbackArtifactTableViewCell"];
 
     if (!cell) {
-        cell = [ArtifactTableViewCell create];
+        cell = [LookbackArtifactTableViewCell create];
     }
 
     RallyLookbackArtifact *artifact = [lookbackStore getArtifactByIndex:indexPath.row];
     NSString *name = [artifact getValueForKey:@"Name"];
-
-    NSLog(@"%@", artifact.values);
+    NSInteger numChangedFields = [[artifact getChangedFields] count];
 
     [cell.artifactName setText:name];
-    [cell.artifactStatus setText:@""];
+    [cell.fieldsCount setText:[NSString stringWithFormat:@"Recently changed fields: %d", numChangedFields]];
+
     return cell;
 }
 

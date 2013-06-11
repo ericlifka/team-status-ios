@@ -1,5 +1,5 @@
 //
-//  ArtifactTableViewCell.h
+//  WSAPIArtifactTableViewCell.h
 //  RallyTeamStatus
 //
 //  Created by Pairing on 6/6/13.
@@ -8,7 +8,7 @@
 
 #import <CTCustomTableViewCell.h>
 
-@interface ArtifactTableViewCell : CTCustomTableViewCell
+@interface WSAPIArtifactTableViewCell : CTCustomTableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *artifactName;
 @property (strong, nonatomic) IBOutlet UILabel *artifactStatus;

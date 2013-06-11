@@ -51,7 +51,7 @@
             success:success];
 }
 
-- (void)findQuery:(NSDictionary *)find forFields:(NSArray *)fields withPageSize:(NSNumber *)pageSize andHydrate:(NSArray *)hydrate
+- (void)findQuery:(NSDictionary *)find forFields:(id)fields withPageSize:(NSNumber *)pageSize andHydrate:(NSArray *)hydrate
           success:(void (^)(id responseObject))success {
     
     NSMutableDictionary *requestData = [[NSMutableDictionary alloc] initWithCapacity:4];
