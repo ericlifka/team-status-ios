@@ -40,7 +40,6 @@ NSInteger RECENT_ACTIVITY = 1;
     }
 
     [self.tableView setDataSource:self];
-    [self showLoadingView];
 
 //    [store loadArtifactsByScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
 //        UIActivityIndicatorView *loadIndicator = (UIActivityIndicatorView *)[self.view viewWithTag:100];
@@ -103,6 +102,8 @@ NSInteger RECENT_ACTIVITY = 1;
 }
 
 - (void)loadArtifactsInProgress {
+    [self showLoadingView];
+    
     [store loadArtifactsByProject:@279050021 withScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
         [self removeLoadingView];
 
@@ -111,11 +112,18 @@ NSInteger RECENT_ACTIVITY = 1;
 }
 
 - (void)loadRecentActivityStream {
-
+    [self showLoadingView];
+    
+    [store loadRecentSnapshotsForProject:@279050021 success:^(RallyArtifactStore *artifactStore) {
+        [self removeLoadingView];
+        
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)styleNavigationController {
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    
 }
 
 - (void)setNavigationIcons {
