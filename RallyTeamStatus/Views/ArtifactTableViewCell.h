@@ -11,6 +11,6 @@
 @interface ArtifactTableViewCell : CTCustomTableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *artifactName;
-@property (strong, nonatomic) IBOutlet UILabel *artifactOwner;
+@property (strong, nonatomic) IBOutlet UILabel *artifactStatus;
 
 @end

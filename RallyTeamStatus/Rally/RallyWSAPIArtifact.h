@@ -16,5 +16,6 @@
 - (id)getValueForKey:(NSString *)key;
 - (NSString *)getOwner;
 - (NSNumber *)getObjectId;
+- (NSString *)getName;
 
 @end

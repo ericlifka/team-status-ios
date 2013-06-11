@@ -45,24 +45,36 @@
 }
 
 - (UITableViewCell *)inProgressTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    RallyArtifactStore *store = [self getCurrentStore];
     ArtifactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtifactTableViewCell"];
 
     if (!cell) {
         cell = [ArtifactTableViewCell create];
     }
 
-    RallyLookbackArtifact *artifact = [store getArtifactByIndex:indexPath.row];
-    NSString *name = [artifact getValueForKey:@"Name"];
+    RallyWSAPIArtifact *artifact = [wsapiStore getArtifactByIndex:indexPath.row];
+    NSString *name = [artifact getName];
+    NSString *owner = [artifact getOwner];
 
     [cell.artifactName setText:name];
-    [cell.artifactOwner setText:@""];
+    [cell.artifactStatus setText:owner];
     return cell;
 }
 
-- (UITableView *)inFlightTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    RallyArtifactStore *store = [self getCurrentStore];
+- (UITableViewCell *)inFlightTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ArtifactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtifactTableViewCell"];
+
+    if (!cell) {
+        cell = [ArtifactTableViewCell create];
+    }
+
+    RallyLookbackArtifact *artifact = [lookbackStore getArtifactByIndex:indexPath.row];
+    NSString *name = [artifact getValueForKey:@"Name"];
+
+    NSLog(@"%@", artifact.values);
+
+    [cell.artifactName setText:name];
+    [cell.artifactStatus setText:@""];
+    return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

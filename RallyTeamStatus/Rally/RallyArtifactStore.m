@@ -48,11 +48,11 @@
     return [self.artifacts count];
 }
 
-- (RallyWSAPIArtifact *) getArtifactByIndex:(NSInteger)index {
+- (id)getArtifactByIndex:(NSInteger)index {
     return [self.artifacts objectAtIndex:index];
 }
 
-- (RallyWSAPIArtifact *) getArtifactByObjectID:(NSNumber *)objectId {
+- (id)getArtifactByObjectID:(NSNumber *)objectId {
     for(id artifact in self.artifacts) {
         if([[artifact getValueForKey:@"ObjectID"] isEqualToNumber:objectId]) {
             return artifact;

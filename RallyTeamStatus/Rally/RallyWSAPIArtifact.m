@@ -44,4 +44,8 @@
     return @0;
 }
 
+- (NSString *)getName {
+    return [self getValueForKey:@"Name"];
+}
+
 @end

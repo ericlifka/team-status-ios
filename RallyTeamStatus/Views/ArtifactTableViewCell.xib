@@ -82,6 +82,7 @@
 								<string key="NSFrame">{{20, 20}, {260, 21}}</string>
 								<reference key="NSSuperview" ref="96235142"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -145,11 +146,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">artifactOwner</string>
+						<string key="label">artifactStatus</string>
 						<reference key="source" ref="403843498"/>
 						<reference key="destination" ref="488206351"/>
 					</object>
-					<int key="connectionID">25</int>
+					<int key="connectionID">29</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -315,6 +316,11 @@
 						<reference key="parent" ref="685873400"/>
 					</object>
 					<object class="IBObjectRecord">
+						<int key="objectID">27</int>
+						<reference key="object" ref="523625177"/>
+						<reference key="parent" ref="685873400"/>
+					</object>
+					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
 						<reference key="object" ref="488206351"/>
 						<array class="NSMutableArray" key="children">
@@ -338,13 +344,8 @@
 						<reference key="parent" ref="403843498"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">16</int>
-						<reference key="object" ref="1038222589"/>
-						<reference key="parent" ref="488206351"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">20</int>
-						<reference key="object" ref="954796800"/>
+						<int key="objectID">28</int>
+						<reference key="object" ref="804698892"/>
 						<reference key="parent" ref="403843498"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -353,14 +354,14 @@
 						<reference key="parent" ref="403843498"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">27</int>
-						<reference key="object" ref="523625177"/>
-						<reference key="parent" ref="685873400"/>
+						<int key="objectID">20</int>
+						<reference key="object" ref="954796800"/>
+						<reference key="parent" ref="403843498"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">28</int>
-						<reference key="object" ref="804698892"/>
-						<reference key="parent" ref="403843498"/>
+						<int key="objectID">16</int>
+						<reference key="object" ref="1038222589"/>
+						<reference key="parent" ref="488206351"/>
 					</object>
 				</array>
 			</object>
@@ -401,7 +402,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">28</int>
+			<int key="maxID">29</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -410,15 +411,15 @@
 					<string key="superclassName">CTCustomTableViewCell</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="artifactName">UILabel</string>
-						<string key="artifactOwner">UILabel</string>
+						<string key="artifactStatus">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="artifactName">
 							<string key="name">artifactName</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="artifactOwner">
-							<string key="name">artifactOwner</string>
+						<object class="IBToOneOutletInfo" key="artifactStatus">
+							<string key="name">artifactStatus</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 					</dictionary>

@@ -55,11 +55,15 @@
           success:(void (^)(id responseObject))success {
     
     NSMutableDictionary *requestData = [[NSMutableDictionary alloc] initWithCapacity:4];
+    NSDictionary *sort = @{
+        @"_ValidFrom": @-1
+    };
     
     [requestData setObject:find forKey:@"find"];
     [requestData setObject:fields forKey:@"fields"];
     [requestData setObject:pageSize forKey:@"pagesize"];
     [requestData setObject:hydrate forKey:@"hydrate"];
+    [requestData setObject:sort forKey:@"sort"];
     
     [self requestWithData:requestData success:^(AFHTTPRequestOperation *operation, id responseObject) {
         success(responseObject);
