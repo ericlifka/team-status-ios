@@ -11,12 +11,17 @@
 #import "ArtifactTableViewCell.h"
 
 #import "RallyArtifactStore.h"
+#import "ArtifactTableViewDataSource.h"
 #import "RallyLookbackArtifact.h"
 #import "RallyWSAPIArtifact.h"
 #import "FontAwesomeKit.h"
+#import "ArtifactTableViewDataSource.h"
 
 NSInteger IN_FLIGHT = 0;
 NSInteger RECENT_ACTIVITY = 1;
+
+NSInteger SEGMENTED_CONTROL_TAG = 10;
+NSInteger LOADING_INDICATOR_TAG = 100;
 
 @interface ArtifactTableViewController ()
 
@@ -34,12 +39,10 @@ NSInteger RECENT_ACTIVITY = 1;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if(store == nil) {
-        store = [RallyArtifactStore instance];
-    }
 
-    [self.tableView setDataSource:self];
+    artifactDataSource = [ArtifactTableViewDataSource new];
+    [self.tableView setDataSource:artifactDataSource];
+    [self.tableView setDelegate:self];
 
 //    [store loadArtifactsByScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
 //        UIActivityIndicatorView *loadIndicator = (UIActivityIndicatorView *)[self.view viewWithTag:100];
@@ -61,32 +64,6 @@ NSInteger RECENT_ACTIVITY = 1;
     [super didReceiveMemoryWarning];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger itemsInTable = [store itemsToDisplayCount];
-    return itemsInTable;
-
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ArtifactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtifactTableViewCell"];
-    
-    if (!cell) {
-        cell = [ArtifactTableViewCell create];
-    }
-
-    RallyWSAPIArtifact *artifact = [store getArtifactByIndex:indexPath.row];
-    NSString *name = [artifact getValueForKey:@"Name"];
-    NSString *owner = [NSString stringWithFormat:@"Owned by: %@", [artifact getOwner]];
-    
-    [cell.artifactName setText:name];
-    [cell.artifactOwner setText:owner];
-    return cell;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"ArtifactSummarySegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
 }
@@ -96,15 +73,19 @@ NSInteger RECENT_ACTIVITY = 1;
         ArtifactSummaryViewController *summaryViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
 
-        RallyWSAPIArtifact *artifact = [store getArtifactByIndex:indexPath.row];
-        summaryViewController.artifact = artifact;
+//        RallyWSAPIArtifact *artifact = [store getArtifactByIndex:indexPath.row];
+//        summaryViewController.artifact = artifact;
     }
+}
+
+- (RallyArtifactStore *)getStore {
+    return [artifactDataSource getCurrentStore];
 }
 
 - (void)loadArtifactsInProgress {
     [self showLoadingView];
-    
-    [store loadArtifactsByProject:@279050021 withScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
+
+    [[self getStore] loadArtifactsByProject:@279050021 withScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
         [self removeLoadingView];
 
         [self.tableView reloadData];
@@ -113,16 +94,15 @@ NSInteger RECENT_ACTIVITY = 1;
 
 - (void)loadRecentActivityStream {
     [self showLoadingView];
-    
-    [store loadRecentSnapshotsForProject:@279050021 success:^(RallyArtifactStore *artifactStore) {
+
+    [[self getStore] loadRecentSnapshotsForProject:@279050021 success:^(RallyArtifactStore *artifactStore) {
         [self removeLoadingView];
-        
+
         [self.tableView reloadData];
     }];
 }
 
 - (void)styleNavigationController {
-    
     
 }
 
@@ -136,7 +116,7 @@ NSInteger RECENT_ACTIVITY = 1;
 
 - (void)showLoadingView {
     UIActivityIndicatorView *loadIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    loadIndicator.tag = 100;
+    loadIndicator.tag = LOADING_INDICATOR_TAG;
     loadIndicator.center = self.view.center;
     [loadIndicator startAnimating];
     
@@ -144,7 +124,7 @@ NSInteger RECENT_ACTIVITY = 1;
 }
 
 - (void)removeLoadingView {
-    UIActivityIndicatorView *loadIndicator = (UIActivityIndicatorView *)[self.view viewWithTag:100];
+    UIActivityIndicatorView *loadIndicator = (UIActivityIndicatorView *)[self.view viewWithTag:LOADING_INDICATOR_TAG];
     if(loadIndicator != nil) {
         [loadIndicator removeFromSuperview];
     }
@@ -152,6 +132,8 @@ NSInteger RECENT_ACTIVITY = 1;
 
 - (IBAction)onControlValueChanged:(id)sender {
     UISegmentedControl *control = (UISegmentedControl *)sender;
+
+    artifactDataSource.currentView = control.selectedSegmentIndex;
 
     if(control.selectedSegmentIndex == IN_FLIGHT) {
         [self loadArtifactsInProgress];

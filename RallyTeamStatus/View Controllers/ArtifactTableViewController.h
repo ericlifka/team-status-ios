@@ -10,8 +10,10 @@
 
 #import "RallyArtifactStore.h"
 
-@interface ArtifactTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
-    RallyArtifactStore *store;
+@class ArtifactTableViewDataSource;
+
+@interface ArtifactTableViewController : UITableViewController {
+    ArtifactTableViewDataSource<UITableViewDataSource> *artifactDataSource;
 }
 
 - (IBAction)onControlValueChanged:(id)sender;

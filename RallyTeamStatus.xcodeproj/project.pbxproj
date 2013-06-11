@@ -27,7 +27,7 @@
 		BCB031BB176107D700FAEBDB /* ArtifactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB031BA176107D700FAEBDB /* ArtifactTableViewCell.xib */; };
 		BCB031BE17611F9100FAEBDB /* WSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB031BD17611F9100FAEBDB /* WSAPIClient.m */; };
 		BCB031C11762164C00FAEBDB /* RallyWSAPIArtifact.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB031C01762164C00FAEBDB /* RallyWSAPIArtifact.m */; };
-		D03D0573A202B3BD8AC71774 /* ArtifactTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D03D0CEB917D2166AABF3F21 /* ArtifactTableView.m */; };
+		D03D0EA860183487BF99E8EE /* ArtifactTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D03D0CE0E73D19256673004E /* ArtifactTableViewDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,8 +64,8 @@
 		BCB031BD17611F9100FAEBDB /* WSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSAPIClient.m; path = Rally/WSAPIClient.m; sourceTree = "<group>"; };
 		BCB031BF1762164C00FAEBDB /* RallyWSAPIArtifact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RallyWSAPIArtifact.h; path = Rally/RallyWSAPIArtifact.h; sourceTree = "<group>"; };
 		BCB031C01762164C00FAEBDB /* RallyWSAPIArtifact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RallyWSAPIArtifact.m; path = Rally/RallyWSAPIArtifact.m; sourceTree = "<group>"; };
-		D03D0A23318BF12B3352FB72 /* ArtifactTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtifactTableView.h; sourceTree = "<group>"; };
-		D03D0CEB917D2166AABF3F21 /* ArtifactTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtifactTableView.m; sourceTree = "<group>"; };
+		D03D053835E457B2C39B4365 /* ArtifactTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtifactTableViewDataSource.h; sourceTree = "<group>"; };
+		D03D0CE0E73D19256673004E /* ArtifactTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtifactTableViewDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +122,7 @@
 				BCB0318D1760CE6700FAEBDB /* AppDelegate.m */,
 				BCB031951760CE6700FAEBDB /* MainStoryboard.storyboard */,
 				BCB031841760CE6700FAEBDB /* Supporting Files */,
+				D03D05D056B5959D7DEB1818 /* Data Sources */,
 			);
 			path = RallyTeamStatus;
 			sourceTree = "<group>";
@@ -182,10 +183,17 @@
 				BCB031B71761079D00FAEBDB /* ArtifactTableViewCell.h */,
 				BCB031B81761079D00FAEBDB /* ArtifactTableViewCell.m */,
 				BCB031BA176107D700FAEBDB /* ArtifactTableViewCell.xib */,
-				D03D0CEB917D2166AABF3F21 /* ArtifactTableView.m */,
-				D03D0A23318BF12B3352FB72 /* ArtifactTableView.h */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		D03D05D056B5959D7DEB1818 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D03D053835E457B2C39B4365 /* ArtifactTableViewDataSource.h */,
+				D03D0CE0E73D19256673004E /* ArtifactTableViewDataSource.m */,
+			);
+			path = "Data Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +306,7 @@
 				BCB031B91761079D00FAEBDB /* ArtifactTableViewCell.m in Sources */,
 				BCB031BE17611F9100FAEBDB /* WSAPIClient.m in Sources */,
 				BCB031C11762164C00FAEBDB /* RallyWSAPIArtifact.m in Sources */,
-				D03D0573A202B3BD8AC71774 /* ArtifactTableView.m in Sources */,
+				D03D0EA860183487BF99E8EE /* ArtifactTableViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

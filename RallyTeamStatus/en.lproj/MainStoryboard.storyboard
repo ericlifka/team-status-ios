@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9lC-yr-xSf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9lC-yr-xSf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -26,7 +26,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="SZ2-Ok-H5y">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="M9K-rV-kFf">
+                        <segmentedControl key="titleView" opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="M9K-rV-kFf">
                             <rect key="frame" x="101" y="5" width="117" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -40,6 +40,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="displayControl" destination="M9K-rV-kFf" id="YDR-bg-R3W"/>
+                        <outlet property="tableView" destination="Zaz-1D-P5P" id="KNF-w1-yCl"/>
                         <segue destination="hjd-9m-r6a" kind="push" identifier="ArtifactSummarySegue" id="AZ0-xd-SG2"/>
                     </connections>
                 </tableViewController>
