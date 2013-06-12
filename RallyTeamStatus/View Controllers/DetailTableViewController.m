@@ -101,7 +101,12 @@
         cell = [UITableViewCell new];
     }
     
-    cell.textLabel.text = [changedField objectForKey:@"field"];
+    NSString *field = [changedField objectForKey:@"field"];
+    NSLog(@"%d", [field rangeOfString:@"_"].location);
+    if([field rangeOfString:@"_"].location == 0) {
+        field = [field substringFromIndex:1];
+    }
+    cell.textLabel.text = field;
     
     if(indexPath.section == 0) {
         id newValue = [changedField objectForKey:@"newValue"];
