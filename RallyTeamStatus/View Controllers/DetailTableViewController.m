@@ -60,6 +60,19 @@
     return [[self.artifact fieldsToDisplay] count];
 }
 
+- (NSString *)artifactValueAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *text = [[[tableView cellForRowAtIndexPath:indexPath] detailTextLabel] text];
+    UIFont *font = [UIFont fontWithName:@"Helvetica Neue" size:12];
+    CGSize constraintSize = CGSizeMake(tableView.frame.size.width, MAXFLOAT);
+    CGSize labelSize = [text sizeWithFont:font constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    
+    return labelSize.height + 30;
+}
+
 - (UITableViewCell *)inProgressDetailTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell" forIndexPath:indexPath];
     RallyWSAPIArtifact *artifact = (RallyWSAPIArtifact *)self.artifact;
@@ -87,12 +100,27 @@
         value = [NSString stringWithFormat:@"%@", value];
     }
     
-    cell.detailTextLabel.text = value;
+    if([field isEqualToString:@"Description"]) {
+        NSMutableString *htmlString = [NSMutableString stringWithString:@"<html><head><title></title></head><body style=\"background:transparent;\">"];
+        [htmlString appendString:value];
+        [htmlString appendString:@"</body></html>"];
+        
+        UIWebView *webView = [[UIWebView alloc] initWithFrame:cell.frame];
+        [webView setBackgroundColor:[UIColor clearColor]];
+        [webView loadHTMLString:htmlString baseURL:nil];
+        
+        cell.detailTextLabel.numberOfLines = 0;
+        
+        [cell.detailTextLabel setValue:value forKey:@"text"];
+        
+    } else {
+        cell.detailTextLabel.text = value;
+    }
 
     return cell;
 }
 
-- (UITableViewCell *)inFlightDetailTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)recentChangesDetailTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell" forIndexPath:indexPath];
     RallyLookbackArtifact *artifact = (RallyLookbackArtifact *)self.artifact;
     NSDictionary *changedField = [[artifact getChangedFields] objectAtIndex:indexPath.row];
@@ -130,7 +158,7 @@
     if([self.artifact isMemberOfClass:[RallyWSAPIArtifact class]]) {
         return [self inProgressDetailTableView:tableView cellForRowAtIndexPath:indexPath];
     } else {
-        return [self inFlightDetailTableView:tableView cellForRowAtIndexPath:indexPath];
+        return [self recentChangesDetailTableView:tableView cellForRowAtIndexPath:indexPath];
     }
 }
 

@@ -128,18 +128,6 @@
             <point key="canvasLocation" x="406" y="-234"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ArtifactTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtifactTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onControlValueChanged:"/>
-                <relationship kind="outlet" name="displayControl" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="DetailTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

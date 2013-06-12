@@ -8,10 +8,8 @@
 
 #import "ArtifactTableViewDataSource.h"
 #import "RallyArtifactStore.h"
-#import "WSAPIArtifactTableViewCell.h"
 #import "RallyWSAPIArtifact.h"
 #import "RallyLookbackArtifact.h"
-#import "LookbackArtifactTableViewCell.h"
 
 //NSInteger IN_FLIGHT = 0;
 //NSInteger RECENT_ACTIVITY = 1;

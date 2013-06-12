@@ -49,7 +49,7 @@
 - (void)getStoriesForProject:(NSNumber *)project withScheduleState:(NSString *)state success:(void (^)(id responseObject))success {
     NSMutableDictionary *requestData = [[NSMutableDictionary alloc] init];
     
-    NSArray *fetchFields = @[@"Name", @"ScheduleState", @"PlanEstimate", @"ObjectID", @"Project", @"Owner", @"FormattedID"];
+    NSArray *fetchFields = @[@"Name", @"ScheduleState", @"PlanEstimate", @"ObjectID", @"Project", @"Owner", @"FormattedID", @"Description"];
     
     [requestData setObject:[fetchFields componentsJoinedByString:@","] forKey:@"fetch"];
     [requestData setObject:[NSString stringWithFormat:@"/project/%@", project] forKey:@"project"];
