@@ -46,34 +46,32 @@
 }
 
 - (UITableViewCell *)inProgressTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WSAPIArtifactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WSAPIArtifactTableViewCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtifactCell"];
 
     if (!cell) {
-        cell = [WSAPIArtifactTableViewCell create];
+        cell = [UITableViewCell new];
     }
 
     RallyWSAPIArtifact *artifact = [wsapiStore getArtifactByIndex:indexPath.row];
-    NSString *name = [artifact getName];
-    NSString *owner = [artifact getOwner];
 
-    [cell.artifactName setText:name];
-    [cell.artifactStatus setText:owner];
+    [cell.textLabel setText:[artifact getName]];
+    [cell.detailTextLabel setText:[artifact getOwner]];
     return cell;
 }
 
 - (UITableViewCell *)inFlightTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LookbackArtifactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LookbackArtifactTableViewCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtifactCell"];
 
     if (!cell) {
-        cell = [LookbackArtifactTableViewCell create];
+        cell = [UITableViewCell new];
     }
 
     RallyLookbackArtifact *artifact = [lookbackStore getArtifactByIndex:indexPath.row];
     NSString *name = [artifact getValueForKey:@"Name"];
     NSInteger numChangedFields = [[artifact getChangedFields] count];
 
-    [cell.artifactName setText:name];
-    [cell.fieldsCount setText:[NSString stringWithFormat:@"Recently changed fields: %d", numChangedFields]];
+    [cell.textLabel setText:name];
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"Recently changed fields: %d", numChangedFields]];
 
     return cell;
 }
