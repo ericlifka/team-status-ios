@@ -7,7 +7,6 @@
 //
 
 #import "ArtifactTableViewController.h"
-#import "ArtifactSummaryViewController.h"
 #import "WSAPIArtifactTableViewCell.h"
 
 #import "RallyArtifactStore.h"
@@ -16,6 +15,7 @@
 #import "RallyWSAPIArtifact.h"
 #import "FontAwesomeKit.h"
 #import "ArtifactTableViewDataSource.h"
+#import "DetailTableViewController.h"
 
 NSInteger IN_FLIGHT = 0;
 NSInteger RECENT_ACTIVITY = 1;
@@ -65,16 +65,17 @@ NSInteger LOADING_INDICATOR_TAG = 100;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"ArtifactSummarySegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
+    [self performSegueWithIdentifier:@"DetailSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"ArtifactSummarySegue"]) {
-        ArtifactSummaryViewController *summaryViewController = segue.destinationViewController;
+    if([segue.identifier isEqualToString:@"DetailSegue"]) {
+        NSLog(@"Segue-ing to detail");
+        DetailTableViewController *detailViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
 
-//        RallyWSAPIArtifact *artifact = [store getArtifactByIndex:indexPath.row];
-//        summaryViewController.artifact = artifact;
+        RallyWSAPIArtifact *artifact = [[self getStore] getArtifactByIndex:indexPath.row];
+        detailViewController.artifact = artifact;
     }
 }
 

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RallyArtifact.h"
 
-@interface RallyWSAPIArtifact : NSObject
+@interface RallyWSAPIArtifact : RallyArtifact
 
 @property (nonatomic, strong) NSDictionary *values;
 

@@ -16,6 +16,18 @@
     return artifact;
 }
 
+- (NSArray *)fieldsToDisplay {
+    NSMutableArray *fields = [NSMutableArray new];
+    NSArray *changedFields = [self getChangedFields];
+
+    for(id field in changedFields) {
+        [fields addObject:[field objectForKey:@"field"]];
+    }
+
+    return fields;
+}
+
+
 - (NSArray *)getChangedFields {
     NSMutableArray *changedFields = [NSMutableArray new];
     NSDictionary *previousValues = [self getValueForKey:@"_PreviousValues"];

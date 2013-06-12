@@ -80,8 +80,6 @@
             [self.artifacts addObject:artifact];
         }
         
-        NSLog(@"%@", self.artifacts);
-        
         success(self);
     }];
 }
@@ -125,8 +123,6 @@
             [artifact setValuesForKeysWithDictionary:result];
             [self.artifacts addObject:artifact];
         }
-        
-        NSLog(@"%@", self.artifacts);
         
         success(self);
     }];

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RallyArtifact.h"
 
-@interface RallyLookbackArtifact : NSObject
+@interface RallyLookbackArtifact : RallyArtifact
 
 @property (nonatomic, strong) NSDictionary *values;
 

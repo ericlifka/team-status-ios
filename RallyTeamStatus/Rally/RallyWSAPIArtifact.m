@@ -16,6 +16,10 @@
     return artifact;
 }
 
+- (NSArray *)fieldsToDisplay {
+    return @[@"Owner", @"Name"];
+}
+
 - (id)getValueForKey:(NSString *)key {
     return [self.values objectForKey:key];
 }
