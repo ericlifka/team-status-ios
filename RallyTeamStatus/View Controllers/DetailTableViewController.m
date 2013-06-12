@@ -71,14 +71,22 @@
     NSString *field = [[artifact fieldsToDisplay] objectAtIndex:indexPath.row];
     cell.textLabel.text = field;
 
-    NSString *value = [artifact getValueForKey:field];
-    if([value isKindOfClass:[NSNull class]]) {
+    id value = [artifact getValueForKey:field];
+    if([value isKindOfClass:[NSNull class]] || value == nil) {
         value = @"None";
     }
 
     if([field isEqualToString:@"Owner"]) {
         value = [artifact getOwner];
+    } else if([field isEqualToString:@"Name"]) {
+        value = [artifact getName];
     }
+    
+    // Value is either a string or a number
+    if(![value isKindOfClass:[NSString class]]) {
+        value = [NSString stringWithFormat:@"%@", value];
+    }
+    
     cell.detailTextLabel.text = value;
 
     return cell;

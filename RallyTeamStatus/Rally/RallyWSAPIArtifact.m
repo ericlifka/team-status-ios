@@ -17,7 +17,7 @@
 }
 
 - (NSArray *)fieldsToDisplay {
-    return @[@"Owner", @"Name"];
+    return @[@"Name", @"Owner", @"PlanEstimate", @"Description"];
 }
 
 - (id)getValueForKey:(NSString *)key {
