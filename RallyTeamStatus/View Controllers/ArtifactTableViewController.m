@@ -42,21 +42,27 @@ NSInteger LOADING_INDICATOR_TAG = 100;
     artifactDataSource = [ArtifactTableViewDataSource new];
     [self.tableView setDataSource:artifactDataSource];
     [self.tableView setDelegate:self];
-
-//    [store loadArtifactsByScheduleState:@"In-Progress" success:^(RallyArtifactStore *artifactStore) {
-//        UIActivityIndicatorView *loadIndicator = (UIActivityIndicatorView *)[self.view viewWithTag:100];
-//        [loadIndicator removeFromSuperview];
-//        
-//        [self.tableView reloadData];
-//    }];
-
-    [self loadArtifactsInProgress];
-    [self styleNavigationController];
-    [self setNavigationIcons];
+    
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+    
+    if(username == nil && password == nil) {
+        [self performSegueWithIdentifier:@"LoginSegue" sender:self];
+    } else {
+        [self loadArtifactsInProgress];
+        [self styleNavigationController];
+        [self setNavigationIcons];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+    if(username && password) {
+        [self loadArtifactsInProgress];
+        [self styleNavigationController];
+        [self setNavigationIcons];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

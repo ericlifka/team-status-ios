@@ -60,17 +60,38 @@
     return [[self.artifact fieldsToDisplay] count];
 }
 
+- (NSString *)stripHTMLFromString:(NSString *)string {
+    NSRange r;
+    NSString *copy = [string copy];
+    while ((r = [copy rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        copy = [copy stringByReplacingCharactersInRange:r withString:@""];
+    return copy;
+}
+
 - (NSString *)artifactValueAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *field = [[self.artifact fieldsToDisplay] objectAtIndex:indexPath.row];
+    id value = [self.artifact getValueForKey:field];
     
+    if(value == nil) {
+        return @"None";
+    } else if([value isKindOfClass:[NSNull class]]) {
+        return @"None";
+    } else if([field isEqualToString:@"Owner"]) {
+        return [(RallyWSAPIArtifact *)self.artifact getOwner];
+    } else if(![value isKindOfClass:[NSString class]]) {
+        return [NSString stringWithFormat:@"%@", value];
+    }
+    
+    return [self stripHTMLFromString:value];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *text = [[[tableView cellForRowAtIndexPath:indexPath] detailTextLabel] text];
+    NSString *text = [self artifactValueAtIndexPath:indexPath];
     UIFont *font = [UIFont fontWithName:@"Helvetica Neue" size:12];
     CGSize constraintSize = CGSizeMake(tableView.frame.size.width, MAXFLOAT);
     CGSize labelSize = [text sizeWithFont:font constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
     
-    return labelSize.height + 30;
+    return labelSize.height + 40;
 }
 
 - (UITableViewCell *)inProgressDetailTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,39 +104,8 @@
 
     NSString *field = [[artifact fieldsToDisplay] objectAtIndex:indexPath.row];
     cell.textLabel.text = field;
-
-    id value = [artifact getValueForKey:field];
-    if([value isKindOfClass:[NSNull class]] || value == nil) {
-        value = @"None";
-    }
-
-    if([field isEqualToString:@"Owner"]) {
-        value = [artifact getOwner];
-    } else if([field isEqualToString:@"Name"]) {
-        value = [artifact getName];
-    }
-    
-    // Value is either a string or a number
-    if(![value isKindOfClass:[NSString class]]) {
-        value = [NSString stringWithFormat:@"%@", value];
-    }
-    
-    if([field isEqualToString:@"Description"]) {
-        NSMutableString *htmlString = [NSMutableString stringWithString:@"<html><head><title></title></head><body style=\"background:transparent;\">"];
-        [htmlString appendString:value];
-        [htmlString appendString:@"</body></html>"];
-        
-        UIWebView *webView = [[UIWebView alloc] initWithFrame:cell.frame];
-        [webView setBackgroundColor:[UIColor clearColor]];
-        [webView loadHTMLString:htmlString baseURL:nil];
-        
-        cell.detailTextLabel.numberOfLines = 0;
-        
-        [cell.detailTextLabel setValue:value forKey:@"text"];
-        
-    } else {
-        cell.detailTextLabel.text = value;
-    }
+    cell.detailTextLabel.numberOfLines = 0;
+    cell.detailTextLabel.text = [self artifactValueAtIndexPath:indexPath];
 
     return cell;
 }

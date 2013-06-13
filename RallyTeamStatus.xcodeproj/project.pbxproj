@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		37228B2E0FC441F59539440C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02369A65059D452D874E80C9 /* libPods.a */; };
+		BC1ADBC4176A0CE000D6378C /* logo-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC1ADBC2176A0CE000D6378C /* logo-568h@2x.png */; };
+		BC1ADBC5176A0CE000D6378C /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC1ADBC3176A0CE000D6378C /* logo@2x.png */; };
+		BC1ADBCA176A0EDD00D6378C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1ADBC9176A0EDD00D6378C /* LoginViewController.m */; };
 		BCB0317E1760CE6700FAEBDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB0317D1760CE6700FAEBDB /* UIKit.framework */; };
 		BCB031801760CE6700FAEBDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB0317F1760CE6700FAEBDB /* Foundation.framework */; };
 		BCB031821760CE6700FAEBDB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB031811760CE6700FAEBDB /* CoreGraphics.framework */; };
@@ -32,6 +35,11 @@
 /* Begin PBXFileReference section */
 		02369A65059D452D874E80C9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF073E5ABE14EA4BEEF3705 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		BC1ADBC1176A0C4200D6378C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		BC1ADBC2176A0CE000D6378C /* logo-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-568h@2x.png"; sourceTree = "<group>"; };
+		BC1ADBC3176A0CE000D6378C /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		BC1ADBC8176A0EDD00D6378C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "View Controllers/LoginViewController.h"; sourceTree = "<group>"; };
+		BC1ADBC9176A0EDD00D6378C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "View Controllers/LoginViewController.m"; sourceTree = "<group>"; };
 		BCB0317A1760CE6700FAEBDB /* RallyTeamStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RallyTeamStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB0317D1760CE6700FAEBDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BCB0317F1760CE6700FAEBDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +136,9 @@
 		BCB031841760CE6700FAEBDB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BC1ADBC2176A0CE000D6378C /* logo-568h@2x.png */,
+				BC1ADBC3176A0CE000D6378C /* logo@2x.png */,
+				BC1ADBC1176A0C4200D6378C /* logo.png */,
 				BCB031851760CE6700FAEBDB /* RallyTeamStatus-Info.plist */,
 				BCB031861760CE6700FAEBDB /* InfoPlist.strings */,
 				BCB031891760CE6700FAEBDB /* main.m */,
@@ -146,6 +157,8 @@
 				BCB031A31760CF1100FAEBDB /* ArtifactTableViewController.m */,
 				BCC950571768A08E001B8517 /* DetailTableViewController.h */,
 				BCC950581768A08E001B8517 /* DetailTableViewController.m */,
+				BC1ADBC8176A0EDD00D6378C /* LoginViewController.h */,
+				BC1ADBC9176A0EDD00D6378C /* LoginViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -250,6 +263,8 @@
 				BCB031901760CE6700FAEBDB /* Default.png in Resources */,
 				BCB031921760CE6700FAEBDB /* Default@2x.png in Resources */,
 				BCB031941760CE6700FAEBDB /* Default-568h@2x.png in Resources */,
+				BC1ADBC5176A0CE000D6378C /* logo@2x.png in Resources */,
+				BC1ADBC4176A0CE000D6378C /* logo-568h@2x.png in Resources */,
 				BCB031971760CE6700FAEBDB /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +315,7 @@
 				BCB031B21760D1AA00FAEBDB /* LookbackApiClient.m in Sources */,
 				BCB031BE17611F9100FAEBDB /* WSAPIClient.m in Sources */,
 				BCB031C11762164C00FAEBDB /* RallyWSAPIArtifact.m in Sources */,
+				BC1ADBCA176A0EDD00D6378C /* LoginViewController.m in Sources */,
 				D03D0EA860183487BF99E8EE /* ArtifactTableViewDataSource.m in Sources */,
 				BCC950591768A08E001B8517 /* DetailTableViewController.m in Sources */,
 				D03D0B7045FFA24C1194BFF6 /* RallyArtifact.m in Sources */,
